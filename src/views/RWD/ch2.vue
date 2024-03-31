@@ -5,25 +5,75 @@
     </h2>
     <ol type="I" v-if="isShow">
       <li>
-        
+        fr，grid專屬單位，剩餘空間占有幾份
       </li>
       <li>
+        父層
+        <ul>
+          <li>display:grid</li>
+          <li>grid-template-columns，橫的有幾格，每格大小為多少
+            <ul>
+              <li>
+                grid-template-columns:1fr 2fr 2fr 1fr
+              </li>
+              <li> grid-template-columns: repeat(3, 1fr);
+                <br>
+                表示 1fr 1fr 1fr
+              </li>
+            </ul>
+          </li>
+          <li>grid-template-rows，直的有幾格，每格大小為多少
+            <ul>
+              <li>
+                grid-template-rows:2fr 1fr 2fr 1fr
+              </li>
+            </ul>
+          </li>
+          <li>gap，格子之間的間距</li>
+          <li>grid-template-areas，把子項設計好的grid-area名稱，塞入格子中，格子不需要物件，用,表示
+            <ul>
+              <li>格子還是只能用長方形或正方形</li>
+              <li>
+                <pre>
+grid-template-areas:
+  "reds reds greens greens"
+  "reds reds greens greens"
+  "reds reds . ."
+  "yellows blues blues blues";
+                </pre>
+              </li>
+            </ul>
+          </li>
 
+        </ul>
       </li>
       <li>
-        <div class="container">
-          <div class="item item-1">Item 1 (Spanning across all columns)</div>
-          <div class="item item-2">Item 2 (Spanning across 2 rows)</div>
-          <div class="item">Item 3</div>
-          <div class="item">Item 4</div>
-          <div class="item">Item 5</div>
-          <div class="item">Item 6</div>
-          <div class="item">Item 7</div>
-          <div class="item">Item 8</div>
-          <div class="item">Item 9</div>
+        子層
+        <ul>
+          <li>grid-column，設定要從垂直格線第幾格至第幾格
+            <pre>
+grid-column: 1/3; // 表示設定位置為垂直線1~3之間
+            </pre>
+          </li>
+          <li>grid-row，設定要從水平格線第幾格至第幾格
+            <pre>
+grid-row: 2/4; // 表示設定位置為水平線2~4之間
+            </pre>
+          </li>
+          <li>grid-area，搭配父層的grid-template-areas 一起使用，替元件設定名稱，可以在父格排版</li>
+        </ul>
+      </li>
+      <li>
+        <div class="container1">
+          <div class="item red">1</div>
+          <div class="item green">2</div>
+          <div class="item blue">3</div>
+          <div class="item yellow">4</div>
         </div>
       </li>
+
     </ol>
+
   </div>
 </template>
 
@@ -36,32 +86,67 @@ const isShow = ref(false);
 </script>
 
 <style lang=scss scoped>
-.container {
+.container1 {
+  width: 400px;
+  height: 400px;
+  background: purple;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 创建了一个包含三列的网格 */
-  grid-gap: 10px;
-  /* 设置网格项之间的间距 */
-  padding: 20px;
-  border: 1px solid #ccc;
-  // width: 300px;
+  gap: 0;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    "reds reds greens greens"
+    "reds reds greens greens"
+    "reds reds . ."
+    "yellows blues blues blues";
+
+  // .red {
+  //   grid-column: 1/2;
+  //   grid-row: 1/4;
+  // }
+
+  // .green {
+  //   grid-column: 3/4;
+  //   grid-row: 1/2;
+  // }
+
+  // .blue {
+  //   grid-column: 4/5;
+  //   grid-row: 1/2;
+  // }
+
+  // .yellow {
+  //   grid-column: 2/3;
+  //   grid-row: 1/2;
+  // }
+
 }
 
+// "yellows yellows yellows yellows";
 .item {
-  background-color: lightblue;
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 使用 grid-column-start 和 grid-column-end 控制网格项的位置 */
-.item-1 {
-  grid-column-start: 1;
-  grid-column-end: 4;
+.red {
+  background: red;
+  grid-area: reds;
 }
 
-/* 使用 grid-row-start 和 grid-row-end 控制网格项的位置 */
-.item-2 {
-  grid-row-start: 2;
-  grid-row-end: 4;
+.green {
+  background: green;
+  grid-area: greens;
+}
+
+.blue {
+  background: blue;
+  grid-area: blues;
+}
+
+.yellow {
+  background: yellow;
+  grid-area: yellows;
 }
 </style>

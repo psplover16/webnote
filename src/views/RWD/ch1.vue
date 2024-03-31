@@ -97,7 +97,7 @@ defineProps({
 });
 const isShow = ref(false);
 </script>
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .contatiner {
   width: 800px;
   height: 600px;

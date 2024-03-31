@@ -16,6 +16,7 @@ export default defineConfig((command, mode, ssrBuild) => {
       vue(),
       babel(),
     ],
+    base: "./",
     resolve: {
       alias: {
         '@': [path.resolve(__dirname, './src')] //設置路徑代表的東西

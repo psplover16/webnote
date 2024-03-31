@@ -102,4 +102,4 @@ defineProps({
   title: String,
 });
 </script>
-<style lang="scss" scope></style>
+<style lang="scss" scoped></style>

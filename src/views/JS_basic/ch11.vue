@@ -38,4 +38,4 @@ const characters = str.split('');
 console.log(fruits); // 输出: ['apple', 'banana', 'orange']
 console.log(characters); 
 </script>
-<style lang="scss" scope></style>
+<style lang="scss" scoped></style>
