@@ -1,12 +1,14 @@
 <template>
   <div>
-    <h2 @click="isShow = !isShow">{{ title }}
+    <h2 @click="isShow = !isShow">
+      {{ title }}
       <div :class="['isShow', isShow ? '' : 'rotate180']">^</div>
     </h2>
     <ol type="I" v-if="isShow">
       <li>差異，pinia支持將store拆分為模塊</li>
-      <li>Vuex
-        <br>
+      <li>
+        Vuex
+        <br />
         index.js
         <pre>
   import Vue from 'vue';
@@ -39,13 +41,19 @@
       </li>
       <li>
         pinia
-        <br>
+        <br />
         store.js
         <pre>
   import { createPinia } from 'pinia';
   const pinia = createPinia();
   export default pinia;         
         </pre>
+        main.js
+        <pre>
+  import pinia from "./store/pinia";
+  app.use(pinia);         
+        </pre>
+
         counter.js
         <pre>
   import { defineStore } from 'pinia';
@@ -93,9 +101,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 const isShow = ref(false);
-const a1 = ref(false)
+const a1 = ref(false);
 defineProps({
   title: String,
 });

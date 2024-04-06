@@ -1,32 +1,42 @@
 <template>
   <div>
-    <h2 @click="isShow = !isShow">{{ title }}
+    <h2 @click="isShow = !isShow">
+      {{ title }}
       <div :class="['isShow', isShow ? '' : 'rotate180']">^</div>
     </h2>
     <ol type="I" v-if="isShow">
       <li>Vue導入，npm create vite@latest</li>
-      <li>pinia導入，npm install pinia
-        <br>
-        在 store資料夾，放三個檔案，pinia.js / /index.js / 自定義pinia檔案
-        <br>
-        pinia.js
-        <pre>
+      <li>
+        pinia導入，npm install pinia
+        <ul>
+          <li>
+            在 store資料夾，放三個檔案，pinia.js / /index.js / 自定義pinia檔案
+            <ul>
+              <li>
+                pinia.js，創建pinia
+                <pre>
   import { createPinia } from 'pinia';
   // 創建 pinia
   const pinia = createPinia();
   export default pinia;
-        </pre>
-        index.js
-        <pre>
+        </pre
+                >
+              </li>
+              <li>
+                index.js，創建自定義pinia統整列表
+                <pre>
   import { usescreenWidth } from "./screenwidth";
     export const useStore = () => {
       return {
         usescreenWidth
       };
     };         
-        </pre>
-        usescreenWidth.js
-        <pre>
+        </pre
+                >
+              </li>
+              <li>
+                usescreenWidth.js，創建子pinia功能列表
+                <pre>
   import { defineStore } from "pinia";
     export const usescreenWidth = defineStore("screenWidth", {
         state: () => ({
@@ -38,23 +48,35 @@
           },
         },
     });          
-        </pre>
-        main.js
-        <pre>
+        </pre
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            main.js，把創建的pinia導入專案
+            <pre>
   import pinia from "./store/pinia";
   app.use(pinia);         
-        </pre>
-        使用
-        <pre>
+        </pre
+            >
+          </li>
+          <li>
+            使用
+            <pre>
   import { useStore } from "@/store";
   const { usescreenWidth } = useStore();
   usescreenWidth().min640  >>>>>直接讀值與操作          
-        </pre>
+        </pre
+            >
+          </li>
+        </ul>
       </li>
-      <li>router
-        <br>
+      <li>
+        router
+        <br />
         npm install vue-router
-        <br>
+        <br />
         建立router資料夾下的index.js
         <pre>
   import { createRouter, createWebHistory, createWebHashHistory } from "vue-router"; //引用 vue-router 的 createRouter() 與 createWebHistory()。
@@ -98,22 +120,17 @@
   &lt;/router-link&gt;
   &lt;router-view /&gt;          
         </pre>
-
-
-        
       </li>
-      <li>
-
-      </li>
+      <li></li>
       <li></li>
     </ol>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 const isShow = ref(false);
-const a1 = ref(false)
+const a1 = ref(false);
 defineProps({
   title: String,
 });
