@@ -64,7 +64,7 @@
       </li>
       <li>arr3 = arr1.concatt(arr2) 陣列合併</li>
       <li>arr.join(params_可選) 將陣列中的所有元素，使用參數做分隔，形成字串</li>
-      <li></li>
+      <li>Math.abs()  回傳一個絕對值</li>
       <li></li>
       <li></li>
       <li></li>

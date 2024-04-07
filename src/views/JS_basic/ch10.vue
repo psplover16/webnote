@@ -6,16 +6,25 @@
     <ol type="I" v-if="isShow">
       <li>語法差異
         <ul>
-          <li>promise，then / catch</li>
-          <li>async / await，可讀性較高</li>
+          <li>
+
+            <pre>
+var family = {
+ name: ‘小明家’,
+ members: {
+  father: '老爸',
+  mom: '老媽',
+  ming: '小明'
+ },
+}
+console.log(JSON.stringify(family));
+console.log(JSON.parse(JSON.stringify(family)));
+            </pre>
+          </li>
+
         </ul>
       </li>
-      <li>失敗
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </li>
+
     </ol>
   </div>
 </template>

@@ -9,7 +9,7 @@
     <ch8 title="break/continue/return" />
     <ch6 title="非同步(ES6)-promise" />
     <ch9 title="非同步(ES6)-async" />
-    <!-- <ch10 title="async/await vs promise" /> -->
+    <ch10 title="深層複製" />
     <ch11 title="常見函數" />
   </div>
 </template>
