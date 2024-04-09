@@ -11,6 +11,7 @@
     <ch9 title="非同步(ES6)-async" />
     <ch10 title="深層複製" />
     <ch11 title="常見函數" />
+    <ch12 title="常見演算法" />
   </div>
 </template>
 
@@ -26,4 +27,5 @@ import ch8 from "./JS_basic/ch8.vue";
 import ch9 from "./JS_basic/ch9.vue";
 import ch10 from "./JS_basic/ch10.vue";
 import ch11 from "./JS_basic/ch11.vue";
+import ch12 from "./JS_basic/ch12.vue";
 </script>
