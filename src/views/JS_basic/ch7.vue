@@ -14,8 +14,7 @@
           </li>
           <li>
             <span class="r">
-              Arr.splice(要操作的起始索引,要刪除的元素數量,要插入的元素)</span
-            >
+              Arr.splice(要操作的起始索引,要刪除的元素數量,要插入的元素)</span>
             <br />
             Array.splice(1,2,"orange")
             從索引1開始，刪除兩個元素，並插入1個ornage元素
@@ -27,29 +26,27 @@
             const numbers = [1, 2, 3, 4, 5];
             <ul>
               <li>
-                <span class="r">map，將數組的每個元素應用於指定函數</span
-                >，並返回一個新的數組，新數組包含了每個元素調用該函數後的結果。
+                <span class="r">map，將數組的每個元素應用於指定函數</span>，並返回一個新的數組，新數組包含了每個元素調用該函數後的結果。
                 <br />
                 doubled = numbers.map(num => num * 2); // [2, 4, 6, 8, 10]
               </li>
               <li>
-                <span class="r">filter</span>，方法用於從數組中<span class="r"
-                  >過濾</span
-                >
+                <span class="r">filter</span>，方法用於從數組中<span class="r">過濾</span>
                 出滿足指定條件的元素，並返回一個新的數組，新數組包含了滿足條件的所有元素。
                 <br />
                 doubled = numbers.filter(num => num % 2 === 0); // [2, 4]
               </li>
               <li>
-                <span class="r">reduce</span>，方法用於將數組的<span class="r"
-                  >所有元素歸納（累加）</span
-                >
+                <span class="r">reduce</span>，方法用於將數組的<span class="r">所有元素歸納（累加）</span>
                 為一個單一的值，通常是一個數字、字符串或對象。
                 <br />
                 doubled = numbers.reduce((acc, num) => acc + num, 0); // 15
               </li>
             </ul>
           </li>
+          <li>arr3 = arr1.concatt(arr2) 陣列合併</li>
+          <li>arr.join(params_可選) 將陣列中的所有元素，使用參數做分隔，形成字串</li>
+          <li>Arr.pop();  刪除並返回最後一個元素</li>
         </ul>
       </li>
       <li>
@@ -57,7 +54,7 @@
         <ul>
           <li>刪除，delete Object.gender // 刪除Object.gender屬性</li>
           <li>
-            Object.keys(Object obj).length  物件長度
+            Object.keys(Object obj).length 物件長度
           </li>
         </ul>
       </li>

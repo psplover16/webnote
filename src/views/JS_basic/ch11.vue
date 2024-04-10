@@ -62,10 +62,11 @@
           <li>string.toLowerCase(); 字串轉小寫</li>
         </ul>
       </li>
-      <li>arr3 = arr1.concatt(arr2) 陣列合併</li>
-      <li>arr.join(params_可選) 將陣列中的所有元素，使用參數做分隔，形成字串</li>
-      <li>Math.abs()  回傳一個絕對值</li>
-      <li>Arr.pop();  刪除並返回最後一個元素</li>
+
+      <li>Math.abs(numbers) 回傳一個絕對值</li>
+      <li>Math.round(numbers) 回傳一個對小數點，四捨五入的數字</li>
+      <li>Math.ceil(numbers) 回傳一個無條件進位至整數</li>
+      <li>Math.floor(numbers) 回傳一個無條件捨去至整數</li>
       <li></li>
       <li></li>
       <li></li>
