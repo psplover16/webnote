@@ -63,10 +63,17 @@ mypromise.<span class="r">then</span>((result) => {
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const isShow = ref(false);
 defineProps({
   title: String,
 });
+
+
+onMounted(() => {
+
+})
+
+
 
 </script>

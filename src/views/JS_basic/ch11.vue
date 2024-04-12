@@ -85,8 +85,8 @@ defineProps({
 const str = "apple,banana,orange";
 const fruits = str.split(",");
 const characters = str.split("");
-console.log(fruits); // 输出: ['apple', 'banana', 'orange']
-console.log(characters);
+// console.log(fruits); // 输出: ['apple', 'banana', 'orange']
+// console.log(characters);
 
 </script>
 <style lang="scss" scoped></style>

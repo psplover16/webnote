@@ -44,10 +44,7 @@ defineProps({
 });
 const a = [0, 1, 2, 3, 4, 5, 6]
 onMounted(() => {
-
-
-  console.log(a)
-
+  // console.log(a)
 })
 
 </script>

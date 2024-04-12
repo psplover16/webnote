@@ -46,7 +46,15 @@
           </li>
           <li>arr3 = arr1.concatt(arr2) 陣列合併</li>
           <li>arr.join(params_可選) 將陣列中的所有元素，使用參數做分隔，形成字串</li>
-          <li>Arr.pop();  刪除並返回最後一個元素</li>
+          <li>Arr.pop(); 刪除並返回最後一個元素</li>
+          <li>
+            <ul>
+              <li>前值若要排序在後值之後，要回傳正數</li>
+              <li> Arr.sort((beforeNum,afterNum)=>beforeNum - afterNum) 升序</li>
+            </ul>
+          </li>
+          <li>array.shift() 移除第一個元素，並取得他</li>
+          <li>array.unshift() 將新元素添加到陣列開頭，然後陣列元素會向後移動一位 </li>
         </ul>
       </li>
       <li>
