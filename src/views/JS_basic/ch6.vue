@@ -58,6 +58,58 @@ mypromise.<span class="r">then</span>((result) => {
 })
         </code>
       </li>
+      <li>
+        複雜promise範例
+        <pre>
+const asyncOperation1 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve('Async Operation 1 completed');
+    }, 2000);
+});
+
+
+function asyncOperation2() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Async Operation 2 completed');
+        }, 1500);
+    });
+}
+function asyncOperation3() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Async Operation 3 completed');
+        }, 1000);
+    });
+}
+// 串聯多個非同步操作
+asyncOperation1
+    .then((result1) => {
+        console.log(result1);
+        return asyncOperation2();
+    })
+    .then((result2) => {
+        console.log(result2);
+        return asyncOperation3();
+    })
+    .then((result3) => {
+        console.log(result3);
+        console.log('All async operations completed');
+    })
+    .catch((error) => {
+        console.error('An error occurred:', error);
+    });
+// 同時執行多個非同步操作， 陣列內的function個別執行，陣列內資訊皆收到resolve之後，才會執行then
+Promise.all([asyncOperation1, asyncOperation2(), asyncOperation3()])
+    .then((results) => {
+        console.log('All async operations completed');
+        console.log('Results:', results);
+    })
+    .catch((error) => {
+        console.error('An error occurred:', error);
+    });
+        </pre>
+      </li>
     </ol>
   </div>
 </template>
