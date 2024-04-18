@@ -1,34 +1,38 @@
 <template>
   <div>
-    <h2 @click="isShow = !isShow">{{ title }}
-    <div 
-    :class="['isShow',isShow?'':'rotate180']"
-    >^</div>
+    <h2 @click="isShow = !isShow">
+      {{ title }}
+      <div :class="['isShow', isShow ? '' : 'rotate180']">^</div>
     </h2>
     <ol type="I" v-if="isShow">
-      <li>原子序-質子數量</li>
-      <li>價電子-最外圈的電子</li>
-      <li>每圈電子數量2n²</li>
-      <li class="r">質子質量為電子的1840倍</li>
-      <li>導體-價電子&lt;4; 半導體-價電子=4;</li>
-      <li>價電子又稱束縛電子，若有足夠能量給他，會變自由電子</li>
-      <li class="r">自由電子密度 : -10²⁹個/m³</li>
-      <li>游離，價電子受外面能量而使其脫離原子的過程</li>
       <li>
-        正離子，電中性原子失去電子，帶正電
-        <br />
-        負離子，電中性原子獲得電子，帶負電
+        MVC
+        <ul>
+          <li>Model，負責程式邏輯</li>
+          <li>View，用戶介面的顯示，</li>
+          <li>
+            Controller，接收用戶的輸入並根據輸入更新Model與View，為兩者的中介
+          </li>
+        </ul>
+        View透過model呈現資料給user，user透過controller觸發事件，model接收事件調整DB，調整完畢後再通知View更新事件
       </li>
-      <li></li>
-      <li>分子/原子/質子/中子/電子/價電子/自由電子/束縛電子/正離子/負離子</li>
+      <li>
+        MVVM，比起MVC更注重使用者端的的介面。能實現雙向綁定
+        <ul>
+          <li>Model，負責程式邏輯</li>
+          <li>ViewModule，轉換原始資料為顯示用資料</li>
+          <li>View，用戶介面的顯示，</li>
+        </ul>
+        View透過ViewModle渲染頁面；當user操作介面時，View接收資料給ViewModel，ViewModel呼叫Model處理資料；model處理完畢後，呼叫ViewModel更新資料，ViewModel資料變動，觸發View更改頁面
+      </li>
     </ol>
   </div>
 </template>
-      
-  <script setup>
-  import {ref} from 'vue'
+
+<script setup>
+import { ref } from "vue";
 defineProps({
   title: String,
 });
-const isShow=ref(false);
+const isShow = ref(false);
 </script>

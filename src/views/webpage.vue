@@ -2,6 +2,7 @@
   <div>
     <ch1 title="cookie / SessionStorage / LocalStorage" />
     <ch2 title="跨域問題" />
+    <ch3 title="MVC VS MVVM" />
   </div>
 </template>
 
