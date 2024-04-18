@@ -9,11 +9,12 @@
         陣列，用[]解構
         <ul>
           <li>
-            <code>
-              let [a, b] = [1, 2];
-              <br>
-              console.log(a); // 输出: 1
-            </code>
+<pre>
+  let [a, b] = [1, 2];
+  console.log(a); // 输出: 1
+  [a,b] = [b,a];
+  console.log(a); // 輸出2
+</pre>
           </li>
         </ul>
 
@@ -33,6 +34,17 @@
               <br>
               console.log(x); // 输出: 10
             </code>
+          </li>
+          <li>數值互調
+            <pre>
+let c = {
+    a: 1,
+    b: 2
+}
+let { a, b } = c;
+c = { b, a }
+console.log(c); // // {b : 2 , a : 1}
+            </pre>
           </li>
           <li>默認值
             <code>

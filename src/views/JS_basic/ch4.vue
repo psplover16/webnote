@@ -7,41 +7,28 @@
     <ol type="I" v-if="isShow">
       <li>
         <ul>
-          <li>不會建立自己的 this，而是繼承自其定義時所在的詞法作用域</li>
+          <li>
+            <span class="r">不會建立自己的 this</span>
+            ，而是 <span class="r">繼承</span> 自其定義時所在的詞法作用域
+          </li>
           <li>this的值由函數定義時所在的上下文決定，而不是呼叫時的上下文。</li>
         </ul>
-        <br />
-        <code>
-          const obj = {
-          <br />
-          &emsp;name: 'John',
-          <br />
-          &emsp;greet: function() {
-          <br />
-          &emsp;&emsp;setTimeout(function() {
-          <br />
-          &emsp;&emsp;&emsp;console.log('Hello, ' + this.name); // 此处的 this
-          指向了全局对象(在浏览器中是 window)，输出 undefined
-          <br />
-          &emsp;&emsp;}, 1000);
-          <br />
-          &emsp;},
-          <br />
-          &emsp;greet2:function(){
-          <br />
-          &emsp;&emsp;setTimeout(() => {
-          <br />
-          &emsp;&emsp;&emsp; console.log('Hello, ' + this.name); // 此处的 this
-          繼承了父作用域，指向了自身，輸出為John
-          <br />
-          &emsp; }, timeout);
-          <br />
-          &emsp;}
-          <br />
-          };
-          <br />
-          obj.greet(); // 调用 greet 方法 obj.greet2(); // 调用 greet2 方法
-        </code>
+<pre>
+ const obj = { 
+  name: 'John', 
+  greet: function() { 
+   setTimeout(function() { 
+    console.log('Hello, ' + this.name); // 此处的 this 指向了全局对象(在浏览器中是 window)，输出 undefined 
+   }, 1000); 
+  }, 
+  greet2:function(){ 
+   setTimeout(() => { 
+     console.log('Hello, ' + this.name); // 此处的 this 繼承了父作用域，指向了自身，輸出為John 
+   }, timeout); 
+  } 
+ }; 
+ obj.greet(); // 调用 greet 方法 obj.greet2(); // 调用 greet2 方法 
+</pre>
       </li>
       <li>
         無法作為建構式，箭頭函數不能用new來創建物件實例，因此不能用做構造函數

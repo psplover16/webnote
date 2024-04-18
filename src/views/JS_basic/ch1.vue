@@ -41,37 +41,23 @@
               <li>不能用 . 取得屬性值，要用[]</li>
               <li>
                 範例，
-                <br />
-                <code>
-                  const classMate = {
-                  <br />
-                  &emsp;[Symbol('宜蓁')] : { score: 70, sleep: '3:00', drink:
-                  true },
-                  <br />
-                  &emsp;[Symbol('chita')] : { score: 90, sleep: '20:00',
-                  drink:false },
-                  <br />
-                  &emsp;[Symbol('宜蓁')] : { score: 100, sleep: '19:00', drink:
-                  false },
-                  <br />
-                  }
-                  <br />
-                  const symbols = Object.getOwnPropertySymbols(classMate);
-                  <br />
-                  for (const symbol of symbols) {
-                  <br />
-                  &emsp;if (symbol.toString() === 'Symbol(宜蓁)') {
-                  <br />
-                  &emsp;&emsp;const value = classMate[symbol];
-                  <br />
-                  &emsp;&emsp;console.log(value); // { score: 100, sleep:
-                  '19:00', drink: false }
-                  <br />
-                  &emsp;}
-                  <br />
-                  }
-                  <br />
-                </code>
+             <pre>
+const classMate = { 
+  [Symbol('宜蓁')] : { score: 70, sleep: '3:00', drink: true }, 
+  [Symbol('chita')] : { score: 90, sleep: '20:00', drink:false }, 
+  [Symbol('宜蓁')] : { score: 100, sleep: '19:00', drink: false }, 
+ } 
+ const symbols = Object.getOwnPropertySymbols(classMate); 
+ for (const symbol of symbols) { 
+  if (symbol.toString() === 'Symbol(宜蓁)') { 
+   const value = classMate[symbol]; 
+   console.log(value); // { score: 100, sleep: '19:00', drink: false } 
+  } 
+} 
+             </pre>
+             for...in 表示key
+             <br>
+             for...of 表示對象元素
               </li>
             </ul>
           </li>
