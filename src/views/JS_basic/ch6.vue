@@ -110,6 +110,39 @@ Promise.all([asyncOperation1, asyncOperation2(), asyncOperation3()])
     });
         </pre>
       </li>
+      <li>
+        <span @click="a1=!a1" class="r">
+          順序解析範例，求console.log()順序，點此看答案
+        </span>
+        <pre>
+setTimeout(() => {
+    console.log(1)
+}, 0);
+console.log(2)
+const asyncOperation1 = new Promise((resolve, reject) => {
+    console.log(3)
+    resolve(4)
+    console.log(5)
+});
+const asyncOperation2 = new Promise((resolve, reject) => {
+    console.log(6)
+    resolve(7)
+    console.log(8)
+});
+asyncOperation1.then((re) => {
+    console.log(9)
+    console.log(re)
+    return asyncOperation2;
+    console.log(10)
+}).then((r) => {
+    console.log(11)
+    console.log(r)
+})
+        </pre>
+        <span v-if="a1">
+          2/3/5/6/8/9/4/11/7/1
+        </span>
+      </li>
     </ol>
   </div>
 </template>
@@ -120,7 +153,7 @@ const isShow = ref(false);
 defineProps({
   title: String,
 });
-
+const a1= ref(false);
 
 onMounted(() => {
 
