@@ -16,6 +16,17 @@ const b = function () {
   }
 }
         </pre>
+第二題
+        <pre>
+var a = 1;
+console.log(a);  // 1
+function aa() {
+    var a = 2;
+    console.log(a)  // 2 
+}
+aa();
+console.log(a);  // 1
+        </pre>
       </li>
       <li>
         <span>
