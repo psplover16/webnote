@@ -67,7 +67,7 @@
       <li>Math.round(numbers) 回傳一個對小數點，四捨五入的數字</li>
       <li>Math.ceil(numbers) 回傳一個無條件進位至整數</li>
       <li>Math.floor(numbers) 回傳一個無條件捨去至整數</li>
-      <li></li>
+      <li>eval("")   該函數為會執行參數內全部的東西</li>
       <li></li>
       <li></li>
       <li></li>

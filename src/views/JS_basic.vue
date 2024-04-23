@@ -3,6 +3,9 @@
     <ch1 title="數據類型" />
     <ch2 title="變量" />
     <ch3 title="原型链(原型方法)" />
+    <ch13 title="類" />
+    <ch14 title="this指向???" />
+
     <ch4 title="箭頭函數(ES6)" />
     <ch5 title="解構賦值(ES6)" />
     <ch7 title="Array/Object" />
@@ -28,4 +31,6 @@ import ch9 from "./JS_basic/ch9.vue";
 import ch10 from "./JS_basic/ch10.vue";
 import ch11 from "./JS_basic/ch11.vue";
 import ch12 from "./JS_basic/ch12.vue";
+import ch13 from "./JS_basic/ch13.vue";
+import ch14 from "./JS_basic/ch14.vue";
 </script>
