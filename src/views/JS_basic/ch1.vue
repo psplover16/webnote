@@ -21,8 +21,7 @@
           <li>Boolean</li>
           <li>String</li>
           <li>Number</li>
-          <li>
-            symbol
+          <li>symbol
             <ul>
               <li>ES6導入</li>
               <li>
@@ -41,7 +40,7 @@
               <li>不能用 . 取得屬性值，要用[]</li>
               <li>
                 範例，
-             <pre>
+                <pre>
 const classMate = { 
   [Symbol('宜蓁')] : { score: 70, sleep: '3:00', drink: true }, 
   [Symbol('chita')] : { score: 90, sleep: '20:00', drink:false }, 
@@ -54,10 +53,11 @@ const classMate = {
    console.log(value); // { score: 100, sleep: '19:00', drink: false } 
   } 
 } 
-             </pre>
-             for...in 表示key
-             <br>
-             for...of 表示對象元素
+             </pre
+                >
+                for...in 表示key
+                <br />
+                for...of 表示對象元素
               </li>
             </ul>
           </li>
