@@ -21,7 +21,8 @@
           <li>Boolean</li>
           <li>String</li>
           <li>Number</li>
-          <li>symbol
+          <li>
+            symbol
             <ul>
               <li>ES6導入</li>
               <li>
@@ -96,6 +97,14 @@ const classMate = {
               $，表示匹配輸入的結束位置
             </ul>
           </li>
+        </ul>
+      </li>
+      <li>
+        判斷資料型別的方式
+        <ul>
+          <li>typeof(valiue)，能回傳基礎資料型態</li>
+          <li>Array.isArray(value)，判斷value是否為Array</li>
+          <li>Object.prototype.toString.call(value)，會回傳 [object Number]，與typeof相比，能回傳較高階的資料型態</li>
         </ul>
       </li>
     </ol>
