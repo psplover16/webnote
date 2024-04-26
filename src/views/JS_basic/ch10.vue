@@ -4,7 +4,28 @@
       <div :class="['isShow', isShow ? '' : 'rotate180']">^</div>
     </h2>
     <ol type="I" v-if="isShow">
-      <li>語法差異
+      <li>call by value，JS中，傳遞基本資料類型會採這個
+        <pre>
+function changeValue(x) {
+  x = 10;
+}
+let num = 5;
+changeValue(num);
+console.log(num);  // 5
+        </pre>
+      </li>
+      <li>
+        call by reference，傳遞json或Array會用這個
+        <pre>
+function changeObject(obj) {
+  obj.name = "John";
+}
+let person = { name: "Alice" };
+changeObject(person);
+console.log(person.name); // John
+        </pre>
+      </li>
+      <li>深層複製
         <ul>
           <li>
 

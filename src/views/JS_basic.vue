@@ -12,7 +12,7 @@
     <ch8 title="break/continue/return" />
     <ch6 title="非同步(ES6)-promise" />
     <ch9 title="非同步(ES6)-async" />
-    <ch10 title="深層複製" />
+    <ch10 title="Call By Value, Call By Reference 參數引用,深層複製" />
     <ch11 title="常見函數" />
     <ch12 title="常見演算法" />
   </div>
