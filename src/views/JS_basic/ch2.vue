@@ -46,6 +46,19 @@ const b = function () {
         </span>
       </li>
       <li><span> const，存在變數提升，宣告的變數為常數</span></li>
+      <li>
+        變數提升
+        <pre>
+console.log(a); // undefined
+var a = 1;
+
+console.log(b); // b is not defined
+let b = 1;
+
+console.log(c); // c is not defined
+const c = 1;
+        </pre>
+      </li>
     </ol>
   </div>
 </template>
