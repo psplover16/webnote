@@ -33,4 +33,39 @@ import ch11 from "./JS_basic/ch11.vue";
 import ch12 from "./JS_basic/ch12.vue";
 import ch13 from "./JS_basic/ch13.vue";
 import ch14 from "./JS_basic/ch14.vue";
+
+
+
+// const obj = { 
+//   name: 'John', 
+//   greet: function() { 
+//    setTimeout(function() { 
+//     console.log(this.name); // this 指向了全局对象(在浏览器中是 window)，输出 "" ，因為settimeout是在全局執行
+//    }, 1000); 
+//   }, 
+//   greet2: function(){ 
+//    setTimeout(() => { 
+//      console.log(this.name); // 箭頭函數的this繼承外部函數作用域，箭頭函數的this與外部作用域相同。箭頭函數繼承了greet2的函數作用域，greet2的函數作用域在obj內
+//    }, 1000); 
+//   },
+//   greet3: function(){
+//     console.log(this.name); // John
+//   },
+//   greet4: ()=>{
+//     console.log(this.name); // 調用時，會看"當下所處環境"的外部作用域
+//   }
+// }; 
+
+// obj.greet(); // 调用 greet 方法 
+// obj.greet2(); // 调用 greet2 方法 
+// obj.greet3();  // John
+// obj.greet4();  // Cannot read properties of undefined
+
+// setTimeout(()=>{
+//   obj.greet3(); // John
+//   obj.greet4(); // Cannot read properties of undefined
+// },10);
+// // obj.greet3 與 obj.greet3() 差別在於， obj.greet3 是一個函數對象引用，而非調用該方法。
+// setTimeout(obj.greet3, 10); // setTimeout 的 this指向全局，然後調用
+// setTimeout(obj.greet4, 10);  // Cannot read properties of undefined
 </script>
