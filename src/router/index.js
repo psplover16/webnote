@@ -54,6 +54,13 @@ const routes = [
       title: 'html',
     }
   },
+  {
+    path: '/electronPage',
+    component: () => import("@/views/electronPage.vue"),
+    meta: {
+      title: 'electronPage',
+    }
+  }
 ];
 
 const router = createRouter({

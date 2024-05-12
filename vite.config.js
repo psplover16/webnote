@@ -30,5 +30,8 @@ export default defineConfig((command, mode, ssrBuild) => {
       },
     },
     envDir: path.resolve(__dirname, "./env"),
+    server: {
+      port: 3000 // 将端口设置为 3000
+    }
   }
 })
