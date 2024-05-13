@@ -15,7 +15,7 @@ function createWindow() {
     })
 
 
-
+console.log(NODE_ENV);
     // 加載index.html
     // port 3000要去vite config 修改
     // mainWindow.loadFile("dist/index.html"); // 將該行改為下面這一行，加載url

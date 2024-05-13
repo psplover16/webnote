@@ -10,7 +10,7 @@
     <router-link to="/RWD" :class="[checkRoute('RWD')]">頁面布局和樣式</router-link>
     <router-link to="/webpage" :class="[checkRoute('webpage')]">瀏覽器相關知識</router-link>
     <router-link to="/html" :class="[checkRoute('html')]">html標籤</router-link>
-    <router-link to="/electron" :class="[checkRoute('html')]">electron</router-link>
+    <router-link to="/electronPage" :class="[checkRoute('electronPage')]">electron</router-link>
   </div>
   <router-view></router-view>
 </template>
@@ -32,7 +32,9 @@ const checkRoute = (key) => {
 html {
   font-size: 16px;
 }
-
+body{
+  margin:8px;
+}
 @media screen and (max-width:500px) {
   html {
     font-size: 10px;

@@ -5,6 +5,7 @@
     <ch3 title="響應式設計/媒體查詢/rem" />
     <ch4 title="文本自動換行" />
     <ch5 title="畫三角形" />
+    <ch6 title="position" />
   </div>
 </template>
 

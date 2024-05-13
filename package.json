@@ -9,9 +9,36 @@
     "dev:test": "vite --mode test",
     "build": "vite build",
     "preview": "vite preview",
-    "electron:serve": "concurrently -k \"npm dev\" \"npm electron\"",
-    "electron:build": "vite build && electron-builder",
+    "electron:serve": "concurrently -k \"npm run dev\" \"npm run electron\"",
+    "electron:build": "npm run build && electron-builder",
     "electron": "wait-on tcp:3000 && cross-env NODE_ENV=development electron ."
+  },
+  "build": {
+    "productName": "網頁筆記",
+    "copyright": "版權所有 © 2024 您的公司名称。保留所有权利。",
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist_electron"
+    },
+    "mac": {
+      "category": "public.app-category.unilities",
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
   },
   "dependencies": {
     "vite-plugin-babel": "^1.2.0",
