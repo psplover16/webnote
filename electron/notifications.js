@@ -10,7 +10,6 @@ const notifications_body = "網頁筆記的body";
 //     console.log(notifications_clickMSG);
 // }
 
-
 export default function showNotification() {
     new Notification({title:notifications_title, body: notifications_body }).show();
 }

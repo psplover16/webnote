@@ -1,13 +1,17 @@
-import { app, BrowserWindow, Menu } from 'electron';
+import { app, BrowserWindow, Tray } from 'electron';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
 import showNotification from "./notifications.js"; // 發送通知模塊(function)
+import mainMenu from "./menu.js"; // 各類菜單-主菜單/右鍵菜單
+import tray from "./utilTray.js"
 
 const NODE_ENV = process.env.NODE_ENV || process.env;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-var mainWindow;
+
+export var mainWindow;
+
 function createWindow() {
     // 创建浏览器窗口
     mainWindow = new BrowserWindow({
@@ -44,7 +48,8 @@ function createWindow() {
 app.whenReady().then(() => {
     createWindow();
     showNotification();
-    mainMenu(3);
+    mainMenu(["右鍵菜單","主菜單"]);
+    tray();
     // macOS用
     app.on("activate", function () {
         // macos系統中，若用戶點應用程式圖標，如果程式沒打開，系統會跑 activate事件
@@ -63,51 +68,5 @@ app.on("window-all-closed", function () {
 });
 
 
-
-
-// 主菜單
-function mainMenu(type) {
-    const template = [
-        {
-            label: 'File',
-            submenu: [
-                { label: 'New File', accelerator: 'CmdOrCtrl+N', click: () => console.log('New File') },
-                { label: 'Open File', accelerator: 'CmdOrCtrl+O', click: () => console.log('Open File') }
-            ]
-        },
-        {
-            label: 'Edit',
-            submenu: [
-                { label: 'Undo', accelerator: 'CmdOrCtrl+Z', role: 'undo' },
-                { label: 'Redo', accelerator: 'Shift+CmdOrCtrl+Z', role: 'redo' },
-                { type: 'separator' },
-                { label: 'Cut', accelerator: 'CmdOrCtrl+X', role: 'cut' },
-                { label: 'Copy', accelerator: 'CmdOrCtrl+C', role: 'copy' },
-                { label: 'Paste', accelerator: 'CmdOrCtrl+V', role: 'paste' },
-                { label: 'Select All', accelerator: 'CmdOrCtrl+A', role: 'selectall' },
-                { label: 'reload', accelerator: 'CmdOrCtrl+|', role: 'reload' },
-                { label: 'delete', accelerator: '', role: 'delete' },
-            ]
-        }
-    ];
-    // 
-    const menu = Menu.buildFromTemplate(template);
-    if (type == 1) {
-        // 右鍵菜單
-        mainWindow.webContents.on('context-menu', (e, params) => {
-            menu.popup({ window: mainWindow, x: params.x, y: params.y });
-        });
-    } else if (type == 2) {
-        // 主菜單(上bar菜單)
-        Menu.setApplicationMenu(menu);
-    } else {
-        mainWindow.webContents.on('context-menu', (e, params) => {
-            menu.popup({ window: mainWindow, x: params.x, y: params.y });
-        });
-        Menu.setApplicationMenu(menu);
-    }
-
-
-}
 
 

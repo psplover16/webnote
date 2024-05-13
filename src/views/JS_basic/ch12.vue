@@ -31,6 +31,34 @@
       </li>
       <li>插入排序法，將陣列分成未排序與排序的部分，將元素一個個由未排列的部分拿到已排列的部分並在已排列的部分排序，直到未排列的陣列為空。</li>
       <!-- <li>桶排序法</li> -->
+      <li>費氏數列，0, 1, 1, 2, 3, 5, 8, 13, 21...
+
+        <pre>
+function feisi(num) {
+  if (num <= 1) {
+    return num;
+  }
+  // 遞迴
+  return feisi(num - 1) + feisi(num - 2);
+
+  // for迴圈
+  // old+new=now
+  // 1+1=2
+  // 1+2=3
+  // 2+3=5
+  // 3+5=8
+  // 每次晉級，old變成new, new = new+old
+  let oldNum = 0;
+  let newNum = 1;
+  for (let i = 2; i < num; i++) {
+    let tmp = oldNum;
+    oldNum = newNum;
+    newNum = newNum + tmp;
+  }
+  return oldNum + newNum;
+}          
+        </pre>
+      </li>
     </ol>
   </div>
 </template>
@@ -42,9 +70,12 @@ const a1 = ref(false)
 defineProps({
   title: String,
 });
-const a = [0, 1, 2, 3, 4, 5, 6]
+
+
+
+
 onMounted(() => {
-  // console.log(a)
+
 })
 
 </script>
