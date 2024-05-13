@@ -28,49 +28,41 @@
       </li>
       <li>
         根目錄放置electron資料夾，內部放electron入口文件，
-        <ul>
-          <li>
-
-
-            <table border="1">
-              <tr>
-                <td>種類</td>
-                <td>
-                  vite，package.json內
-                </td>
-                <td>內容</td>
-                <td>語法差異</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>CommonJS(舊版)</td>
-                <td>"type": "commonjs" (vite會提示已棄用)</td>
-                <td>
-                  <span class="b" @click="popout_page_mainCJS = true">main.CJS內容</span>
-                  <popout_page :contentsType="'mainCJS'" @closePage="popout_page_mainCJS = false"
-                    v-if="popout_page_mainCJS" />
-                </td>
-                <td>require()和module.exports 來引入/導出模塊</td>
-                <td>同步加載</td>
-                <td>運行時動態加載的，這意味著模塊的導入和導出發生在代碼執行時。</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>ES6</td>
-                <td>"type": "module"</td>
-                <td></td>
-                <td>import和export語法 來引入和導出模塊。</td>
-                <td>異步加載</td>
-                <td>靜態解析時加載的，這意味著模塊的導入和導出在代碼執行之前就已經確定。</td>
-                <td></td>
-              </tr>
-            </table>
-
-
-          </li>
-        </ul>
+        <table border="1">
+          <tr>
+            <td>種類</td>
+            <td>
+              vite，package.json內
+            </td>
+            <td>內容</td>
+            <td>語法差異</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>CommonJS(舊版)</td>
+            <td>"type": "commonjs" (vite會提示已棄用)</td>
+            <td>
+              <span class="b" @click="popout_page_mainCJS = true">main.CJS內容</span>
+              <popout_page :contentsType="'mainCJS'" @closePage="popout_page_mainCJS = false"
+                v-if="popout_page_mainCJS" />
+            </td>
+            <td>require()和module.exports 來引入/導出模塊</td>
+            <td>同步加載</td>
+            <td>運行時動態加載的，這意味著模塊的導入和導出發生在代碼執行時。</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>ES6</td>
+            <td>"type": "module"</td>
+            <td></td>
+            <td>import和export語法 來引入和導出模塊。</td>
+            <td>異步加載</td>
+            <td>靜態解析時加載的，這意味著模塊的導入和導出在代碼執行之前就已經確定。</td>
+            <td></td>
+          </tr>
+        </table>
       </li>
       <!-- <img src="@/assets/123.jpg" alt=""> -->
       <li>package.json新增
