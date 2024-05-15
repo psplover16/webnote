@@ -7,6 +7,7 @@ import mainMenu from "./utils/menu.js"; // 各類菜單-主菜單/右鍵菜單
 import tray from "./utils/utilTray.js"; // 系統托盤(最右下角收納圖區)
 import fileDialog from "./utils/fileDialog.js"; // 檔案import的彈窗
 import messageboxDialog from "./utils/messageBoxDialog.js"; // 提示彈窗
+import screenSize from "./utils/screenSize.js"; // 視窗大小獲取
 
 const NODE_ENV = process.env.NODE_ENV || process.env;
 const __filename = fileURLToPath(import.meta.url);
@@ -16,10 +17,11 @@ export var mainWindow;
 export const isMac = process.platform === "darwin";
 
 function createWindow() {
+  const { width, height } = screenSize();
   // 创建浏览器窗口
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: width,
+    height: height,
     webPreferences: {
       // preload 预加载，在执行html的脚本之前就运行。__dirname指向当前模块所属目录。
       preload: [
