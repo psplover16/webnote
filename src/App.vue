@@ -14,7 +14,7 @@
   </div>
   <router-view></router-view>
   <!-- 版本區 -->
-  <div>
+  <div style="position: relative;bottom: 0;">
     <div>Chrome:
       <span id="chrome-version"></span>
     </div>
@@ -25,8 +25,8 @@
       <span id="electron-version"></span>
     </div>
   </div>
-  <button @click="captureDesktop">擷取桌面影像</button>
-  <video id="video" ref="videoElement" autoplay></video>
+  <!-- <button @click="captureDesktop">擷取桌面影像</button> -->
+  <!-- <video id="video" ref="videoElement" autoplay></video> -->
 </template>
 
 <script setup>
