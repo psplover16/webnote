@@ -65,6 +65,14 @@
         </table>
       </li>
       <!-- <img src="@/assets/123.jpg" alt=""> -->
+      <li>
+        <ul>
+          <li>在index.html設置 <span class="b">{{ meta1 }}</span></li>
+          <li>meta放在head標籤裡，提供網頁的附加信息</li>
+          <li>http-equiv="Content-Security-Policy" 指定網頁的內容安全策略(CSP)，用於限制網頁中執行的 JavaScript 代碼的來源。</li>
+          <li>content="script-src 'self'" 指定允許載入和執行 JavaScript 的來源 為 只允許從同一域名載入和執行 JavaScript 代碼。 </li>
+        </ul>
+      </li>
       <li>package.json新增
         <ul>
           <li>electron的入口文件設置 "main":"electron/main.cjs"</li>
@@ -133,5 +141,6 @@ const a1 = ref(false);
 defineProps({
   title: String,
 });
+const meta1 = `<meta http-equiv="Content-Security-Policy" content="script-src 'self'">`
 </script>
 <style lang="scss" scoped></style>

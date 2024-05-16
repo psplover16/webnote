@@ -13,6 +13,20 @@
     <router-link to="/electronPage" :class="[checkRoute('electronPage')]">electron</router-link>
   </div>
   <router-view></router-view>
+  <!-- 版本區 -->
+  <div>
+    <div>Chrome:
+      <span id="chrome-version"></span>
+    </div>
+    <div>node:
+      <span id="node-version"></span>
+    </div>
+    <div>electron:
+      <span id="electron-version"></span>
+    </div>
+  </div>
+  <button @click="captureDesktop">擷取桌面影像</button>
+  <video id="video" ref="videoElement" autoplay></video>
 </template>
 
 <script setup>
@@ -32,9 +46,11 @@ const checkRoute = (key) => {
 html {
   font-size: 16px;
 }
-body{
-  margin:8px;
+
+body {
+  margin: 8px;
 }
+
 @media screen and (max-width:500px) {
   html {
     font-size: 10px;
@@ -46,7 +62,8 @@ body{
   // justify-content: center;
   // align-items: center;
   font-size: 1.7rem;
-text-align: center;
+  text-align: center;
+
   a {
     display: inline-block;
     margin: 10px;

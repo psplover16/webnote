@@ -23,11 +23,10 @@ function createWindow() {
     width: width,
     height: height,
     webPreferences: {
+      contextIsolation: true, // 是否將渲染進程中的網頁代碼與主進程中的 Node.js 環境隔離開來(是否將 渲染進程中的網頁代碼只能通過 Electron 提供的 API 與主進程進行通信，而無法直接訪問 Node.js 模塊或全局變量。)
+      nodeIntegration: false, // 是否在渲染進程中啟用 Node.js 整合。 (渲染進程中的網頁代碼是否可以直接訪問 Node.js 模塊和全局變量)
       // preload 预加载，在执行html的脚本之前就运行。__dirname指向当前模块所属目录。
-      preload: [
-        path.join(__dirname, "preload.js"),
-        // path.join(__dirname, 'notifications.js'), // 渲染进程通知
-      ],
+      preload: path.join(__dirname, "utils", "preload.js") // 只能放一個預載
     },
   });
 
@@ -53,7 +52,7 @@ function createWindow() {
 app.whenReady().then(() => {
   createWindow();
   //
-  showNotification();
+  // showNotification();
   mainMenu(["右鍵菜單", "主菜單"]);
   tray();
   // fileDialog();

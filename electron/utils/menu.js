@@ -49,7 +49,6 @@ export default function mainMenu(type) {
       menu.popup({ window: mainWindow, x: params.x, y: params.y });
     });
   }
-  console.log(type.indexOf("主菜單"));
   if (type.indexOf("主菜單") != -1) {
     // 主菜單(上bar菜單)
     Menu.setApplicationMenu(menu);
