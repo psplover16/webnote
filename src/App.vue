@@ -26,7 +26,7 @@
     </div>
   </div>
   <!-- <button @click="captureDesktop">擷取桌面影像</button> -->
-  <!-- <video id="video" ref="videoElement" autoplay></video> -->
+  <video id="video" ref="videoElement" autoplay></video>
 </template>
 
 <script setup>

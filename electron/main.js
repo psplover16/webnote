@@ -8,6 +8,7 @@ import tray from "./utils/utilTray.js"; // 系統托盤(最右下角收納圖區
 import fileDialog from "./utils/fileDialog.js"; // 檔案import的彈窗
 import messageboxDialog from "./utils/messageBoxDialog.js"; // 提示彈窗
 import screenSize from "./utils/screenSize.js"; // 視窗大小獲取
+import desktopCapture from "./utils/desktopCapture.js"; //
 
 const NODE_ENV = process.env.NODE_ENV || process.env;
 const __filename = fileURLToPath(import.meta.url);
@@ -29,7 +30,7 @@ function createWindow() {
       preload: path.join(__dirname, "utils", "preload.js") // 只能放一個預載
     },
   });
-
+  desktopCapture();
   // 加载index.html
   // port 3000要去vite config 修改
   // mainWindow.loadFile("dist/index.html"); // 将该行改为下面这一行，加载url
