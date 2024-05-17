@@ -25,11 +25,10 @@
       <span id="electron-version"></span>
     </div>
   </div>
-  <!-- <button @click="captureDesktop">擷取桌面影像</button> -->
-  <video id="video" ref="videoElement" autoplay></video>
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 
@@ -40,6 +39,8 @@ const checkRoute = (key) => {
   }
   return a;
 };
+
+
 </script>
 
 <style lang="scss">
