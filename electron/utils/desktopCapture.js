@@ -7,7 +7,7 @@ export default function desktopCapture() {
     .then(async (sources) => {
       for (const source of sources) {
         // console.log(source.name)
-        if (source.name === "整個螢幕畫面") {
+        if (source.name === "螢幕 2") {
           mainWindow.webContents.send("SET_SOURCE", source.id);
           return;
         }

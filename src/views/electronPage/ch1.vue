@@ -17,11 +17,13 @@
 
         </div>
         <button @click="captureDesktop">擷取桌面影像</button>
+        <button @click="saveVideo">錄製五秒影片</button>
         <ul>
           <li>在main.js設置把屏幕錄製</li>
           <li>把錄製到的屏幕，在preload.js轉換成stream，放在video標籤</li>
           <li>video標籤必須在index.html設立</li>
-          <li>在需要利用該video標籤的組件內，調用index.html的video標籤到指定組件</li>
+          <li>在需要利用該video標籤的組件內，調用index.html的video標籤到指定組件 (擷取桌面影像)</li>
+          <li>把預先寫好再preload的錄製功能，在Vue調用。 錄製五秒影片</li>
         </ul>
       </li>
     </ol>
@@ -55,7 +57,10 @@ onBeforeUnmount(() => {
   document.getElementById("videoOriginalPos").appendChild(video);
   // console.log(123456)
 })
-
+const saveVideo = ()=>{
+  // console.log(window.electronAPI.getBuffer())
+  window.electronAPI.dealStream();
+}
 
 </script>
 <style lang="scss" scoped></style>
