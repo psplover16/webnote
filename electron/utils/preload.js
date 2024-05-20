@@ -121,5 +121,5 @@ function onRecorderError(e) {
 contextBridge.exposeInMainWorld("electronAPI", {
   getBuffer: () => buffer, // 讓Vue組件可以抓到buffer
   getStream: () => stream,
-  dealStream: dealStream, // 讓Vue組件可以抓到 function
+  dealStream: dealStream // 讓Vue組件可以抓到 function
 });
