@@ -1,4 +1,4 @@
-import { app, Tray, dialog } from "electron";
+import { app, dialog } from "electron";
 import { mainWindow } from "../main.js";
 
 import path from "path";
@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename); // 該檔案的父層目錄
 
-export default function messageboxDialog() {
+export default function msgBoxDialog() {
   dialog
     .showMessageBox(mainWindow, {
       type: "info", // "info" (籃底i字) | "question" (籃底i字) | "none" (無圖標) | "error" (X紅底)| "warning" (黃色三角形驚嘆號)

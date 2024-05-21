@@ -6,9 +6,11 @@ import showNotification from "./utils/notifications.js"; // 發送通知模塊(f
 import mainMenu from "./utils/menu.js"; // 各類菜單-主菜單/右鍵菜單
 import tray from "./utils/utilTray.js"; // 系統托盤(最右下角收納圖區)
 import fileDialog from "./utils/fileDialog.js"; // 檔案import的彈窗
-import messageboxDialog from "./utils/messageBoxDialog.js"; // 提示彈窗
+import msgBoxDialog from "./utils/msgBoxDialog.js"; // 提示彈窗
 import screenSize from "./utils/screenSize.js"; // 視窗大小獲取
-import desktopCapture from "./utils/desktopCapture.js"; //
+import desktopCapture from "./utils/desktopCapture.js"; // 螢幕錄音錄影
+import checkClipboard from "./utils/checkClipboard.js"; // 檢查 剪貼簿(複製的記憶體)
+
 
 const NODE_ENV = process.env.NODE_ENV || process.env;
 const __filename = fileURLToPath(import.meta.url);
@@ -57,7 +59,8 @@ app.whenReady().then(() => {
   mainMenu(["右鍵菜單", "主菜單"]);
   tray();
   // fileDialog();
-  // messageboxDialog();
+  msgBoxDialog();
+  // checkClipboard();
   //
   //
   // macOS用

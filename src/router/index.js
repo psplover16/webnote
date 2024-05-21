@@ -60,6 +60,13 @@ const routes = [
     meta: {
       title: 'electronPage',
     }
+  },
+  {
+    path: '/LogicPage',
+    component: () => import("@/views/LogicPage.vue"),
+    meta: {
+      title: 'LogicPage',
+    }
   }
 ];
 
