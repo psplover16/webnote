@@ -31,9 +31,7 @@
                 console.log(bunny.description); // 可愛的小兔子
               </li>
               <li>
-                不能直接用遍歷、for迴圈撈取，要使用<span class="r"
-                  >Object.getOwnPropertySymbols()</span
-                >
+                不能直接用遍歷、for迴圈撈取，要使用<span class="r">Object.getOwnPropertySymbols()</span>
               </li>
               <li>
                 放在物件裡面，當作定義屬性key時，要將symbol的值放在[]當中，不然會被當字串
@@ -54,8 +52,7 @@ const classMate = {
    console.log(value); // { score: 100, sleep: '19:00', drink: false } 
   } 
 } 
-             </pre
-                >
+             </pre>
                 for...in 表示key
                 <br />
                 for...of 表示對象元素
@@ -71,9 +68,7 @@ const classMate = {
           <li>Array</li>
           <li>Function</li>
           <li>Date</li>
-          <li>
-            Regexp
-            <ul>
+          <li>Regexp<ul>
               範例，身分證字號
               <br />
               <code>
@@ -95,6 +90,18 @@ const classMate = {
               \d{8}，表示匹配後面8個數字
               <br />
               $，表示匹配輸入的結束位置
+            </ul>
+          </li>
+          <li>
+            exec 與 test區別
+            <ul>exec
+              <li>返回Array，返回匹配的詳細訊息</li>
+              <li>當正則表達式含有g修飾符，每次調用 exec 方法都會返回下一個匹配結果，直到找不到更多匹配為止。</li>
+            </ul>
+            <ul>
+              test
+              <li>返回bool，返回是否有匹配</li>
+              <li>不支持全局匹配，它只檢查正則表達式是否有匹配，只返回第一個匹配結果</li>
             </ul>
           </li>
         </ul>

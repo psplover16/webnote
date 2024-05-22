@@ -6,7 +6,7 @@
     <ch6 title="script標籤加上 defer / async / 不加" />
     <ch4 title="奇怪的問題" />
     <ch5 title="攻擊" />
-
+    <ch7 title="githubPage打包 某些檔案404處理方式" />
   </div>
 </template>
 

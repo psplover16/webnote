@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import { ref, onBeforeUnmount } from 'vue';
+import { ref, onBeforeUnmount, onMounted } from 'vue';
 const isShow = ref(false);
 const a1 = ref(false)
 defineProps({
@@ -42,7 +42,6 @@ defineProps({
 const videoPos = ref(null);
 let captureDesktop = () => {
   const video = document.getElementById('video');
-
   if (video.paused) {
     video.play();
   } else {
@@ -54,13 +53,16 @@ let captureDesktop = () => {
 onBeforeUnmount(() => {
   let video = document.getElementById('video');
   // console.log(document.getElementById("videoOriginalPos"))
+  video.style.display = 'none';
   document.getElementById("videoOriginalPos").appendChild(video);
   // console.log(123456)
 })
-const saveVideo = ()=>{
+const saveVideo = () => {
   // console.log(window.electronAPI.getBuffer())
   window.electronAPI.dealStream();
 }
-
+onMounted(() => {
+  document.getElementById('video').style.display = '';
+})
 </script>
 <style lang="scss" scoped></style>
