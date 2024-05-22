@@ -10,7 +10,7 @@ import msgBoxDialog from "./utils/msgBoxDialog.js"; // 提示彈窗
 import screenSize from "./utils/screenSize.js"; // 視窗大小獲取
 import desktopCapture from "./utils/desktopCapture.js"; // 螢幕錄音錄影
 import checkClipboard from "./utils/checkClipboard.js"; // 檢查 剪貼簿(複製的記憶體)
-
+import { _setIcon, setbarIcon } from "./utils/setIcon_temp.js"; // 設置打包icon
 
 const NODE_ENV = process.env.NODE_ENV || process.env;
 const __filename = fileURLToPath(import.meta.url);
@@ -29,7 +29,7 @@ function createWindow() {
       contextIsolation: true, // 是否將渲染進程中的網頁代碼與主進程中的 Node.js 環境隔離開來(是否將 渲染進程中的網頁代碼只能通過 Electron 提供的 API 與主進程進行通信，而無法直接訪問 Node.js 模塊或全局變量。)
       nodeIntegration: false, // 是否在渲染進程中啟用 Node.js 整合。 (渲染進程中的網頁代碼是否可以直接訪問 Node.js 模塊和全局變量)
       // preload 预加载，在执行html的脚本之前就运行。__dirname指向当前模块所属目录。
-      preload: path.join(__dirname, "utils", "preload.js") // 只能放一個預載
+      preload: path.join(__dirname, "utils", "preload.js"), // 只能放一個預載
     },
   });
   desktopCapture();
@@ -61,7 +61,12 @@ app.whenReady().then(() => {
   // fileDialog();
   msgBoxDialog();
   // checkClipboard();
+  // _setIcon();
+  setbarIcon();
   //
+  const iconPath = path.join(__dirname, "assets", "icon", "pic.png");
+
+  // mainWindow.setWindowIcon(iconPath); // Windows 和 Linux 上的視窗圖標
   //
   // macOS用
   app.on("activate", function () {

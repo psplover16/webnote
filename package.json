@@ -31,10 +31,12 @@
     },
     "mac": {
       "category": "public.app-category.unilities",
-      "target": "dmg"
+      "target": "dmg",
+      "icon": "./electron/assets/icon/pic.icns"
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "./electron/assets/icon/pic.ico"
     },
     "linux": {
       "target": "AppImage"
