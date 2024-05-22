@@ -53,7 +53,7 @@ let captureDesktop = () => {
 
 onBeforeUnmount(() => {
   let video = document.getElementById('video');
-  console.log(document.getElementById("videoOriginalPos"))
+  // console.log(document.getElementById("videoOriginalPos"))
   document.getElementById("videoOriginalPos").appendChild(video);
   // console.log(123456)
 })
