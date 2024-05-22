@@ -4,7 +4,7 @@ import { mainWindow } from "../main.js";
 import path from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename); // 該檔案的父層目錄
+const __dirname = path.dirname(__filename); // 該檔案所在的位置
 //
 // 系統托盤(最右下角收納圖區)
 export default function tray() {

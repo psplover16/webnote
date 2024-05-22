@@ -83,7 +83,7 @@
             <pre>
 "scripts": {
   "electron:serve": "concurrently -k \"npm run dev\" \"npm run electron\"",
-  "electron:build": "npm run build && electron-builder",
+  "electron:build": "npm run build && electron-builder",   // 僅有打包，不含其他功能
   "electron": "wait-on tcp:3000 && cross-env NODE_ENV=development electron ."
 }
 </pre>

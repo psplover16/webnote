@@ -10,7 +10,7 @@ import msgBoxDialog from "./utils/msgBoxDialog.js"; // 提示彈窗
 import screenSize from "./utils/screenSize.js"; // 視窗大小獲取
 import desktopCapture from "./utils/desktopCapture.js"; // 螢幕錄音錄影
 import checkClipboard from "./utils/checkClipboard.js"; // 檢查 剪貼簿(複製的記憶體)
-import { _setIcon, setbarIcon } from "./utils/setIcon_temp.js"; // 設置打包icon
+import changeIcon from "./utils/dynmic_setIcon.js"; // 檢查 剪貼簿(複製的記憶體)
 
 const NODE_ENV = process.env.NODE_ENV || process.env;
 const __filename = fileURLToPath(import.meta.url);
@@ -31,7 +31,9 @@ function createWindow() {
       // preload 预加载，在执行html的脚本之前就运行。__dirname指向当前模块所属目录。
       preload: path.join(__dirname, "utils", "preload.js"), // 只能放一個預載
     },
+    icon: path.join(__dirname, "assets/icons/icon.ico"), // 配置容器icon （bar上面的icon） // 靜態設置icon
   });
+
   desktopCapture();
   // 加载index.html
   // port 3000要去vite config 修改
@@ -61,12 +63,8 @@ app.whenReady().then(() => {
   // fileDialog();
   msgBoxDialog();
   // checkClipboard();
-  // _setIcon();
-  setbarIcon();
   //
-  const iconPath = path.join(__dirname, "assets", "icon", "pic.png");
-
-  // mainWindow.setWindowIcon(iconPath); // Windows 和 Linux 上的視窗圖標
+  // changeIcon(); // 動態設置icon
   //
   // macOS用
   app.on("activate", function () {
