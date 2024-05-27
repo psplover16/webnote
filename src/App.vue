@@ -13,8 +13,9 @@
     <router-link to="/electronPage" :class="[checkRoute('electronPage')]">electron</router-link>
     <router-link to="/LogicPage" :class="[checkRoute('LogicPage')]">Logic</router-link>
     <!--  -->
-    <router-link :to="`/commonly/${commonlyParams}`" :class="[checkRoute('commonlyMeta')]">常用
+    <router-link :to="commonlyPath" :class="[checkRoute('commonlyMeta')]">常用
       <input type="text" v-model="commonlyParams" placeholder="routerParams">
+      <input type="text" v-model="commonlyQuery" placeholder="routerQuery">
     </router-link>
   </div>
   <router-view></router-view>
@@ -33,7 +34,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch, computed } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 
@@ -45,6 +46,17 @@ const checkRoute = (key) => {
   return a;
 };
 const commonlyParams = ref();
+const commonlyQuery = ref();
+
+watch([commonlyParams, commonlyQuery], ([newParams, newQuery], [oldParams, oldQuery]) => {
+  // 在這裡可以處理參數變化的邏輯
+  console.log('commonlyParams 變化：', newParams, oldParams);
+  console.log('commonlyQuery 變化：', newQuery, oldQuery);
+});
+
+const commonlyPath = computed(() => {
+  return `/commonly/${commonlyParams.value}${commonlyQuery.value ? `?queryValue${commonlyQuery.value}` : ""}`;
+})
 
 </script>
 

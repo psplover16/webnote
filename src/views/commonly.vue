@@ -55,11 +55,6 @@
           <li>async，非同步的下載腳本，可能會導致變數混亂</li>
         </ul>
       </li>
-      <!-- <span v-if="showText"></span> -->
-      <!-- <ul v-if="showText">
-        <li></li>
-        <li></li>
-      </ul> -->
       <li>pinia有哪些??
         <ul v-if="showText">
           <li>state / actions / getters</li>
@@ -105,14 +100,134 @@ router.afterEach((to,from)=>{
           <li>route.name</li>
         </ul>
       </li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li>ssr vs csr
+        <ul v-if="showText">
+          <li>SSR，服務器具渲染，SEO</li>
+          <li>CSR，vue3, 渲染過程在JS，JS會比較大包，載入速度會比較慢，可互動時間比較長</li>
+        </ul>
+      </li>
+      <li>CORS
+        <ul v-if="showText">
+          <li>瀏覽器的安全限制，代表兩個網址不同源，不同協定/不同主機/不同port</li>
+          <li>解決，
+            <ul>
+              <li>Access-controll-allow-orgin</li>
+              <li>代理伺服器</li>
+              <li>JSONP</li>
+              <li>websocket</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>CSRF
+        <ul v-if="showText">
+          <li>跨站請求偽造</li>
+          <li>攻擊者利用使用者的身分訊息執行了使用者非本意的操作</li>
+          <li>利用token來防範</li>
+        </ul>
+      </li>
+      <li>XSS攻擊
+        <ul v-if="showText">
+          <li>跨站腳本攻擊</li>
+          <li>攻擊者透過注入腳本來利用網站本身的程式漏，當其他用戶訪問受影響的網頁時，這些腳本會在用戶的瀏覽器執行，從而執行竊取個資、修改網頁內容等行為</li>
+          <li>
+            <ul>防範
+              <li>用戶輸入的資料要進行驗證及過濾</li>
+              <li>對特殊符號進行編碼，以防止瀏覽器誤認為是代碼</li>
+              <li>避免使用不安全的JS API，例如eval()和innerHTML</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>原型鍊
+        <pre>
+function dog(name){
+    this.name=name;
+}
+dog.prototype.whatName=function(){
+    console.log(this.name);
+}
+const john = new dog("john")
+john.whatName()
+        </pre>
+      </li>
+      <li>建構式</li>
+      <li>Array的操作
+        <ul>
+          <li>Arr.splice("要操作得起始索引","要修改的數量","要添加的元素")</li>
+          <li>Arr1.concat(Arr2)</li>
+          <li>Arr.join("")
+            <span v-if="showText">把Array全部元素變成字串組合起來</span>
+          </li>
+          <li>Arr.pop()
+            <span v-if="showText">刪除並返回最後一個元素</span>
+          </li>
+          <li>Arr.shift()
+            <span v-if="showText">刪除並返回第一個元素</span>
+          </li>
+          <li>Arr.unshift(str)
+            <span v-if="showText">添加str元素至Arr的第一個元素</span>
+          </li>
+          <li>Arr.sort((beforeNum,afterNum)=>beforeNum - afterNum)
+            <ul v-if="showText">
+              <li>範例為升序</li>
+              <li>beforeNum - afterNum 若 為正數，兩者要交換位置</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <!-- <span v-if="showText"></span> -->
+      <!-- <ul v-if="showText">
+        <li></li>
+        <li></li>
+      </ul> -->
+      <li>Promise
+        <ul v-if="showText">
+          <li>
+            <pre>
+const mypromise = new Promise((resolve, reject) => { 
+  // 模拟非同步操作 
+  setTimeout(() => { 
+    resolve('Async data'); 
+  }, 1000); 
+}); 
+            </pre>
+          </li>
+          <li>
+            <pre>
+ mypromise.then((result) => { 
+  console.log('Promise resolved with result:', result); 
+ }).catch((err) => { 
+  console.error('Promise rejected with error:', err); 
+ }) 
+            </pre>
+          </li>
+        </ul>
+      </li>
+      <li>Async
+        <ul v-if="showText">
+          <li>
+            <pre>
+const fetchData = async () => { 
+ return mypromise;
+}; 
+            </pre>
+          </li>
+          <li>
+            <pre>
+const getData = async () => { 
+ try { 
+   const data = await fetchData(); 
+   console.log('Data:', data); // Data: Async data 
+  } catch (error) { 
+   console.error('Error:', error); 
+ } 
+}; 
+getData(); 
+            </pre>
+          </li>
+        </ul>
+      </li>
     </ul>
   </div>
 </template>
@@ -126,91 +241,14 @@ defineProps({
 const showText = ref(true);
 onMounted(() => {
   // http://localhost:3000/#/commonly/123456?ggwp=123
-  console.log(useRoute().path); // /commonly/123456
-  console.log(useRoute().name); // commonly
-  console.log(useRoute().meta); // {title: 'commonlyMeta'}
-  console.log(useRoute().query); // {ggwp: '123'}
+  // console.log(useRoute().path); // /commonly/123456
+  // console.log(useRoute().name); // commonly
+  // console.log(useRoute().meta); // {title: 'commonlyMeta'}
+  // console.log(useRoute().query); // {ggwp: '123'}
 })
 
 
-const word=`
-ssr vs csr
-csr ,vue3, 渲染過程在JS，JS會比較大包，載入速度會比較慢，可互動時間比較長
-ssr ,nuxt
-
-
-CORS
-瀏覽器的安全限制，代表兩個網址不同源，不同協定/不同主機/不同port
-Access-controll-Allow-orgin
-代理伺服器
-JSONP
-websocket
-
-
-CSRF
-跨站請求偽造，攻擊者利用使用者的身分訊息執行了使用者非本意的操作，利用token來防範
-
-
-XSS攻擊
-跨站腳本攻擊，攻擊者透過注入腳本來利用網站本身的程式漏，。當其他用戶訪問受影響的網頁時，這些腳本會在用戶的瀏覽器執行，從而執行竊取個資、修改網頁內容等行為
-1.用戶輸入的資料要進行驗證及過濾
-2.對特殊符號進行編碼，以防止瀏覽器交期誤認為是代碼
-3.避免使用不安全的JSAPI，例如eval() 和  innerHTML屬性
-
-
-
-
-
-原型鍊  
-function dog(name){
-    this.name=name;
-}
-dog.prototype.whatName=function(){
-    console.log(this.name);
-}
-const john = new dog("john")
-john.whatName()
-
-建構式， function per(){ }     const john = new per();
----------------------------------------------------------------------
-Arr.splice("要操作的起始索引",要修改的數量,要插入的元素)
-arr1.concat(arr2)
-arr.join("") 
-Arr.pop()  刪除並返回最後一個元素
-Arr.shift() 刪除並返回第一個元素
-Arr.unshift(Str)  添加Str到Array第一個元素
-Arr.sort((beforeNum,afterNum)=>beforeNum - afterNum) 升序   前值若要排序在後值之後，要回傳正數
-   sort 回傳為負，不動。   回傳為正，會動
-
-delete Obj.gender
----------------------------------------------------------------------
-const mypromise = new Promise((resolve, reject) => { 
-    // 模拟非同步操作 
-    setTimeout(() => { 
-      resolve('Async data'); 
-    }, 1000); 
-  }); 
-
-
- mypromise.then((result) => { 
-  console.log('Promise resolved with result:', result); 
- }).catch((err) => { 
-  console.error('Promise rejected with error:', err); 
- }) 
-------------------------------------------------------------------
- const fetchData = async () => { 
-  return mypromise;
- }; 
-const getData = async () => { 
-  try { 
-    const data = await fetchData(); 
-    console.log('Data:', data); // Data: Async data 
-   } catch (error) { 
-    console.error('Error:', error); 
-  } 
- }; 
- getData(); 
-------------------------------------------------------------------
+const word = `
 費式
 0, 1, 1, 2, 3, 5, 8, 13, 21...
 function fasi(key){
