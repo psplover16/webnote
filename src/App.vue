@@ -12,6 +12,10 @@
     <router-link to="/html" :class="[checkRoute('html')]">html標籤</router-link>
     <router-link to="/electronPage" :class="[checkRoute('electronPage')]">electron</router-link>
     <router-link to="/LogicPage" :class="[checkRoute('LogicPage')]">Logic</router-link>
+    <!--  -->
+    <router-link :to="`/commonly/${commonlyParams}`" :class="[checkRoute('commonlyMeta')]">常用
+      <input type="text" v-model="commonlyParams" placeholder="routerParams">
+    </router-link>
   </div>
   <router-view></router-view>
   <!-- 版本區 -->
@@ -40,7 +44,7 @@ const checkRoute = (key) => {
   }
   return a;
 };
-
+const commonlyParams = ref();
 
 </script>
 

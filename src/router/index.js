@@ -1,73 +1,89 @@
 // src/router/index.js
-import { createRouter, createWebHistory,createWebHashHistory } from 'vue-router';
-import test from '@/views/test.vue';
+import {
+  createRouter,
+  createWebHistory,
+  createWebHashHistory,
+} from "vue-router";
+import test from "@/views/test.vue";
 
 const routes = [
   //   { path: '/', component: Home },
-  { path: '/', redirect: '/JS_basic' },
+  { path: "/", redirect: "/JS_basic" },
   {
-    path: '/JS_basic',
+    path: "/JS_basic",
     component: () => import("@/views/JS_basic.vue"),
     meta: {
-      title: 'JS_basic',
-    }
+      title: "JS_basic",
+    },
   },
   {
-    path: '/frontframe',
+    path: "/frontframe",
     component: () => import("@/views/frontframe.vue"),
     meta: {
-      title: 'frontframe',
-    }
+      title: "frontframe",
+    },
   },
   {
-    path: '/frontEngineering',
+    path: "/frontEngineering",
     component: () => import("@/views/frontEngineering.vue"),
     meta: {
-      title: 'frontEngineering',
-    }
+      title: "frontEngineering",
+    },
   },
   {
-    path: '/dom_event',
+    path: "/dom_event",
     component: () => import("@/views/dom_event.vue"),
     meta: {
-      title: 'dom_event',
-    }
+      title: "dom_event",
+    },
   },
   {
-    path: '/RWD',
+    path: "/RWD",
     component: () => import("@/views/RWD.vue"),
     meta: {
-      title: 'RWD',
-    }
+      title: "RWD",
+    },
   },
   {
-    path: '/webpage',
+    path: "/webpage",
     component: () => import("@/views/webpage.vue"),
     meta: {
-      title: 'webpage',
-    }
+      title: "webpage",
+    },
   },
   {
-    path: '/html',
+    path: "/html",
     component: () => import("@/views/html.vue"),
     meta: {
-      title: 'html',
-    }
+      title: "html",
+    },
   },
   {
-    path: '/electronPage',
+    path: "/electronPage",
     component: () => import("@/views/electronPage.vue"),
     meta: {
-      title: 'electronPage',
-    }
+      title: "electronPage",
+    },
   },
   {
-    path: '/LogicPage',
+    path: "/LogicPage",
     component: () => import("@/views/LogicPage.vue"),
     meta: {
-      title: 'LogicPage',
-    }
-  }
+      title: "LogicPage",
+    },
+  },
+  {
+    path: "/commonly/:id",
+    component: () => import("@/views/commonly.vue"),
+    // query: {
+    //   key1: "commonlyValue1",
+    //   key2: "commonlyValue2",
+    // },
+    name:"commonly",
+    meta: {
+      title: "commonlyMeta",
+    },
+  },
 ];
 
 const router = createRouter({
