@@ -42,6 +42,8 @@ body {
 }
         </pre>
       </li>
+      <li>rwd常見尺寸，480/414/375/360/320</li>
+      <li></li>
     </ol>
   </div>
 </template>

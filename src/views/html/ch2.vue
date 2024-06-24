@@ -11,7 +11,7 @@
       </ul>
 
       <li>
-        網頁結構化標籤，
+        網頁結構化標籤(用於定義網頁結構)
         <ul>
           <li>header，頁首</li>
           <li>footer，頁尾</li>
@@ -21,6 +21,7 @@
           <li>
             article，文章，通常搭配header、footer一起用
           </li>
+          <li>aside，側邊攔</li>
         </ul>
       </li>
       <li>
