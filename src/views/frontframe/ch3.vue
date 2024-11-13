@@ -5,7 +5,12 @@
       <div :class="['isShow', isShow ? '' : 'rotate180']">^</div>
     </h2>
     <ol type="I" v-if="isShow">
-      <li>Vue導入，npm create vite@latest</li>
+      <li>Vue導入，
+        <ul>
+          <li>vue create 專案名稱</li>
+          <li>npm create vite@latest</li>
+        </ul>
+      </li>
       <li>
         pinia導入，npm install pinia
         <ul>

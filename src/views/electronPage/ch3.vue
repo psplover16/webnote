@@ -64,7 +64,7 @@
           </tr>
         </table>
       </li>
-      <!-- <img src="@/assets/123.jpg" alt=""> -->
+      <img src="@/assets/123.jpg" alt="">
       <li>
         <ul>
           <li>在index.html設置 <span class="b">{{ meta1 }}</span></li>

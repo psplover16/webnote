@@ -2,6 +2,8 @@ import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 import babel from "vite-plugin-babel";
+import { visualizer } from 'rollup-plugin-visualizer';
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 // https://vitejs.dev/config/
 // 在 defineConfig 函數中，可以傳入一個函數，該函數接收三個參數：command、mode 和 ssrBuild。 這些參數的意義如下：
@@ -11,7 +13,19 @@ import babel from "vite-plugin-babel";
 export default defineConfig((command, mode, ssrBuild) => {
   const env = loadEnv(mode, process.cwd());
   return {
-    plugins: [vue(), babel()],
+    plugins: [
+      vue(), 
+      babel(),
+      visualizer({
+        open: true,
+        filename: "./dist/stats.html",
+        gzipSize: true, // 收集 gzip大小，並顯示
+        brotliSize: true, // 收集 brotli 大小，並顯示
+      }),
+      ViteImageOptimizer({ // 壓縮圖片
+        jpg: { quality: 100 },
+      }),
+    ],
     base: "./",
     resolve: {
       alias: {

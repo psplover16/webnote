@@ -12,7 +12,7 @@
     "electron:serve": "concurrently -k \"npm run dev\" \"npm run electron\"",
     "electron:build": "npm run build-icon && npm run build && electron-builder",
     "electron": "wait-on tcp:3000 && cross-env NODE_ENV=development electron .",
-    "build-icon":"electron-icon-builder --input=./electron/assets/icon/pic.png --output=./electron/assets/ --flatten"
+    "build-icon": "electron-icon-builder --input=./electron/assets/icon/pic.png --output=./electron/assets/ --flatten"
   },
   "build": {
     "productName": "網頁筆記",
@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "vite-plugin-babel": "^1.2.0",
+    "vite-plugin-image-optimizer": "^1.1.8",
     "vue": "^3.3.11",
     "vue-router": "^4.0.13"
   },
@@ -57,8 +58,11 @@
     "electron": "^30.0.3",
     "electron-builder": "^24.13.3",
     "electron-icon-builder": "^2.0.1",
+    "rollup-plugin-visualizer": "^5.12.0",
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2",
     "vite": "^5.0.8",
     "wait-on": "^7.2.0"
   }
