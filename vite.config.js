@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
+// import { fileURLToPath, URL } from "node:url";
 import babel from "vite-plugin-babel";
 import { visualizer } from 'rollup-plugin-visualizer';
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
@@ -68,5 +69,54 @@ export default defineConfig((command, mode, ssrBuild) => {
         },
       },
     },
+    // 
+    // resolve: {
+    //   alias: {
+    //     "@": fileURLToPath(new URL("./src", import.meta.url)),
+    //   },
+    // },
+    // 
+    // build: {
+    //   sourcemap: false,
+    //   minify: "terser", // 選用哪種壓縮工具，常見的有 Terser(適合新專案) / UglifyJS(適合老專案，不支援ES6+)
+    //   terserOptions: {
+    //     compress: { // 壓縮選項
+    //       drop_console: true, // 刪除console語句
+    //       drop_debugger: true, // 刪除debugger語句
+    //     },
+    //     format: {
+    //       comments: false, // 壓縮後不保留註釋
+    //     },
+    //   },
+    //   cssCodeSplit: true,
+    //   rollupOptions: {
+    //     treeshake: true,
+    //     output: {
+    //       entryFileNames: "assets/js/entry-[hash].js",
+    //       chunkFileNames: "assets/js/[name]-[hash].js",
+    //       assetFileNames: (chunkInfo) => {
+    //         if (chunkInfo.name === "index.css") {
+    //           return "assets/[ext]/entry-[hash].[ext]";
+    //         }
+    //         return "assets/[ext]/[name]-[hash].[ext]";
+    //       },
+    //       manualChunks(id) {
+    //         if (id.includes("node_modules")) {
+    //           return "vendor";
+    //         }
+    //       },
+    //     },
+    //   },
+    // },
+    // 
+    // server: {
+    //   proxy: {
+    //     "/api": {
+    //       target: "https://development-executeapi.cmoney.tw",
+    //       changeOrigin: true,
+    //       // rewrite: (path) => path.replace(/^\/api/, ''),
+    //     },
+    //   },
+    // },
   };
 });
