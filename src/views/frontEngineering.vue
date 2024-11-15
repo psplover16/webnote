@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ch1 title="Webpack打包工具的配置和使用" />
+    <ch1 title="vite.config.js 設置" />
     <ch2 title="config解析" />
     <ch3 title="babel / Polyfill" />
     <ch4 title="Vite-bundle檢測" />

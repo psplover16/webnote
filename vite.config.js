@@ -27,10 +27,12 @@ export default defineConfig((command, mode, ssrBuild) => {
         jpg: { quality: 100 },
       }),
     ],
-    base: "./",
+    base: "./", // 設定基本URL路徑，若設置為 /myapp，則所有靜態資源將會從/myapp/ 去尋找資源
     resolve: {
       alias: {
-        "@": [path.resolve(__dirname, "./src")], //設置路徑代表的東西
+        // path.resolve([from ...], to) // nodeJs的路徑拼接函數，把from陣列裡面的參數全部拼接，最後在與to變數拼接成絕對路徑
+        // __dirname 是nodeJs的全局變數，代表當前模塊(JS文件)的目錄路徑
+        "@": [path.resolve(__dirname, "./src")], // 設置路徑代表的東西
       },
     },
     css: {
@@ -41,14 +43,14 @@ export default defineConfig((command, mode, ssrBuild) => {
         },
       },
     },
-    envDir: path.resolve(__dirname, "./env"),
+    envDir: path.resolve(__dirname, "./env"), // 指定env所在的位置(默認為跟目錄)，在vue文件中 使用 import.meta.env.VITE_API_AXIOS_BASE_URL 的方式引用
     server: {
       port: 3000, // 将端口设置为 3000
     },
 
     build: {
       rollupOptions: {
-        output: {
+        output: { // 優化打包輸出
           // https://github.com/rollup/rollup/blob/master/src/utils/sanitizeFileName.ts
           sanitizeFileName(name) {
             // eslint-disable-next-line no-control-regex
@@ -66,6 +68,18 @@ export default defineConfig((command, mode, ssrBuild) => {
               name.slice(driveLetter.length).replace(INVALID_CHAR_REGEX, "")
             );
           },
+          // 
+          // dir: 'dist',  // 输出到 dist 文件夹
+          format: 'es', // 指定输出文件格式，使用 ES 模塊格式 (esm)  
+          // esm（默认）：ES模块，适用于现代浏览器和前端工具。
+          // cjs: CommonJS模块，适用于 Node.js 环境。
+          // umd: 适用于浏览器的通用模块定义，可以在浏览器和 Node.js 中使用。
+          // iife: 立即执行的函数表达式，适用于浏览器，通常用于单一文件的包。
+
+          // // 自定義輸出文件名稱
+          // entryFileNames: 'assets/[name].[hash].js',  
+          // chunkFileNames: 'chunks/[name].[hash].js',
+          // assetFileNames: 'assets/[name].[hash].[ext]',
         },
       },
     },
@@ -77,9 +91,9 @@ export default defineConfig((command, mode, ssrBuild) => {
     // },
     // 
     // build: {
-    //   sourcemap: false,
+    //   sourcemap: false, // Source map 是一種映射文件，可以將最終的壓縮後代碼映射回源代碼，便於調試。
     //   minify: "terser", // 選用哪種壓縮工具，常見的有 Terser(適合新專案) / UglifyJS(適合老專案，不支援ES6+)
-    //   terserOptions: {
+    //   terserOptions: { // terser 配置的具體選項
     //     compress: { // 壓縮選項
     //       drop_console: true, // 刪除console語句
     //       drop_debugger: true, // 刪除debugger語句
@@ -88,23 +102,24 @@ export default defineConfig((command, mode, ssrBuild) => {
     //       comments: false, // 壓縮後不保留註釋
     //     },
     //   },
-    //   cssCodeSplit: true,
-    //   rollupOptions: {
-    //     treeshake: true,
+    //   cssCodeSplit: true, // 啟用css代碼分割
+    //   rollupOptions: { // Vite 使用 Rollup 進行打包 (Vue2是webPack)，能使用該配置改變Rollup選項。
+    //     input: '/src/custom-entry.js'  // 指定自定义入口文件
+    //     treeshake: true, // 樹搖，移除未使用的code
     //     output: {
-    //       entryFileNames: "assets/js/entry-[hash].js",
-    //       chunkFileNames: "assets/js/[name]-[hash].js",
-    //       assetFileNames: (chunkInfo) => {
+    //       entryFileNames: "assets/js/entry-[hash].js", // 設置入口文件(從該文件開始加載)的命名，[hash]表示哈希值
+    //       chunkFileNames: "assets/js/[name]-[hash].js", // 設置 異步代碼文件的命名，chunk表示打包工具分割出的模塊
+    //       assetFileNames: (chunkInfo) => { // 靜態文件的命名
     //         if (chunkInfo.name === "index.css") {
-    //           return "assets/[ext]/entry-[hash].[ext]";
+    //           return "assets/[ext]/entry-[hash].[ext]"; // [ext] 是文件的副檔名
     //         }
     //         return "assets/[ext]/[name]-[hash].[ext]";
     //       },
-    //       manualChunks(id) {
-    //         if (id.includes("node_modules")) {
-    //           return "vendor";
-    //         }
-    //       },
+          // manualChunks(id) { // 手動分割代碼，id表示模塊的路徑字符串
+          //   if (id.includes("node_modules")) { // 
+          //     return "vendor";
+          //   }
+          // },
     //     },
     //   },
     // },
