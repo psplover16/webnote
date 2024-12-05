@@ -2,10 +2,10 @@
   <div>
     <ch1 title="數據類型" />
     <ch2 title="變量" />
-    <ch3 title="原型链(原型方法)" />
+    <ch3 title="原型鍊(原型方法)" />
     <ch13 title="類" />
     <ch14 title="this指向???" />
-
+    <ch15 title="觀察者模式" />
     <ch4 title="箭頭函數(ES6)" />
     <ch5 title="解構賦值(ES6)" />
     <ch7 title="Array/Object" />
@@ -33,7 +33,7 @@ import ch11 from "./JS_basic/ch11.vue";
 import ch12 from "./JS_basic/ch12.vue";
 import ch13 from "./JS_basic/ch13.vue";
 import ch14 from "./JS_basic/ch14.vue";
-
+import ch15 from "./JS_basic/ch15.vue";
 
 
 // const obj = { 
