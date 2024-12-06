@@ -34,7 +34,7 @@
 </template>
 
 <script setup>
-import { ref, watch, computed } from "vue";
+import { ref, watch, computed, provide } from "vue";
 import { useRoute } from "vue-router";
 const route = useRoute();
 
@@ -58,6 +58,11 @@ const commonlyPath = computed(() => {
   return `/commonly/${commonlyParams.value}${commonlyQuery.value ? `?queryValue${commonlyQuery.value}` : ""}`;
 })
 
+const provideTest = ref(123);
+provide('provideTest', provideTest);
+watch(provideTest,(v)=>{
+  console.log(v)
+})
 </script>
 
 <style lang="scss">

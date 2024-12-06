@@ -42,8 +42,8 @@ defineProps({
 const VITE_BASIC_APIURL = ref("");
 onMounted(() => {
   VITE_BASIC_APIURL.value = import.meta.env.VITE_BASIC_APIURL;
-  console.log(import.meta.env.VITE_BASIC_APIURL);
-  console.log("ZZZZ")
+  // console.log(import.meta.env.VITE_BASIC_APIURL);
+  // console.log("ZZZZ")
 })
 </script>
 <style lang="scss" scoped></style>

@@ -151,10 +151,10 @@ defineProps({
 
 
 onMounted(()=>{
-  console.log(useRoute().path);
-  console.log(useRoute().params);
-  console.log(useRoute().query);
-  console.log(useRoute().name);
+  // console.log(useRoute().path);
+  // console.log(useRoute().params);
+  // console.log(useRoute().query);
+  // console.log(useRoute().name);
 })
 
 </script>

@@ -2,6 +2,7 @@
   <div>
     <ch1 title="Vue3/Vue2" />
     <ch2 title="Teleport(Vue3)" />
+    <ch14 title="provide/inject (Vue3)" />
     <ch3 title="Vue/TailwindCss/Router/pinia導入" />
     <ch6 title="router&route" />
     <ch4 title="Vuex vs pinia" />
@@ -18,7 +19,6 @@
     <ch16 title="keep-alive" />
     <ch17 title="env的使用" />
     <ch18 title="修飾符號" />
-
   </div>
 </template>
 
@@ -36,7 +36,7 @@ import ch10 from "./frontframe/ch10.vue";
 import ch11 from "./frontframe/ch11.vue";
 import ch12 from "./frontframe/ch12.vue";
 import ch13 from "./frontframe/ch13.vue";
-// import ch14 from "./frontframe/ch14.vue";
+import ch14 from "./frontframe/ch14.vue";
 import ch15 from "./frontframe/ch15.vue";
 import ch16 from "./frontframe/ch16.vue";
 import ch17 from "./frontframe/ch17.vue";

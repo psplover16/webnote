@@ -77,6 +77,7 @@
         <ul>
           <li>Object.keys(Object obj) 返回obj的全部的key，型態為Array</li>
           <li>Object.values(Object obj) 返回obj的全部的value，型態為Array</li>
+          <li>Object.hasOwn(要觀察的物件,"字串")  返回bool，檢查該物件是否有指定索引值</li>
         </ul>
       </li>
     </ol>
