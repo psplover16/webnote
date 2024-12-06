@@ -12,7 +12,8 @@
     <ch8 title="break/continue/return" />
     <ch6 title="非同步(ES6)-promise" />
     <ch9 title="非同步(ES6)-async" />
-    <ch10 title="Call By Value, Call By Reference 參數引用,深層複製" />
+    <ch10 title="Call By Value, Call By Reference 參數引用,深層複製" />    
+    <ch16 title="動畫函數 requestAnimationFrame" />
     <ch11 title="常見函數" />
     <ch12 title="常見演算法" />
   </div>
@@ -34,7 +35,7 @@ import ch12 from "./JS_basic/ch12.vue";
 import ch13 from "./JS_basic/ch13.vue";
 import ch14 from "./JS_basic/ch14.vue";
 import ch15 from "./JS_basic/ch15.vue";
-
+import ch16 from "./JS_basic/ch16.vue";
 
 // const obj = { 
 //   name: 'John', 

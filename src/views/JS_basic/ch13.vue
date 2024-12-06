@@ -50,17 +50,17 @@ MyclassChild.staticSayHello();  // MyclassChild    12345
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
-import testClass from "./testClass";
-const newTestClass = new testClass("測試名稱");
-//
-import extendText from "./extendText";
-const newExtendText = new extendText('新創建的繼承者');
-//
 const isShow = ref(false);
 const a1 = ref(false);
 defineProps({
   title: String,
 });
+// 
+// 
+// import testClass from "./testClass";
+// const newTestClass = new testClass("測試名稱");
+// import extendText from "./extendText";
+// const newExtendText = new extendText('新創建的繼承者');
 onMounted(() => {
   // 一般靜態測試
   // console.log(testClass.staticParam);
