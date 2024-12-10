@@ -1,33 +1,62 @@
 <template>
   <!-- <router-link to="/">Home</router-link> | -->
   <div class="title_APP">
+    <!-- <img src="@/assets/images/background-o.jpg" alt=""> -->
     <router-link to="/JS_basic" :class="[checkRoute('JS_basic')]">
       JS基礎知識
     </router-link>
-    <router-link to="/frontframe" :class="[checkRoute('frontframe')]">前端框架</router-link>
-    <router-link to="/frontEngineering" :class="[checkRoute('frontEngineering')]">前端工程化與工具</router-link>
-    <router-link to="/dom_event" :class="[checkRoute('dom_event')]">DOM操作和事件處理</router-link>
-    <router-link to="/RWD" :class="[checkRoute('RWD')]">頁面布局和樣式</router-link>
-    <router-link to="/webpage" :class="[checkRoute('webpage')]">瀏覽器相關知識</router-link>
+    <router-link to="/frontframe" :class="[checkRoute('frontframe')]"
+      >前端框架</router-link
+    >
+    <router-link
+      to="/frontEngineering"
+      :class="[checkRoute('frontEngineering')]"
+      >前端工程化與工具</router-link
+    >
+    <router-link to="/dom_event" :class="[checkRoute('dom_event')]"
+      >DOM操作和事件處理</router-link
+    >
+    <router-link to="/RWD" :class="[checkRoute('RWD')]"
+      >頁面布局和樣式</router-link
+    >
+    <router-link to="/webpage" :class="[checkRoute('webpage')]"
+      >瀏覽器相關知識</router-link
+    >
     <router-link to="/html" :class="[checkRoute('html')]">html標籤</router-link>
-    <router-link to="/electronPage" :class="[checkRoute('electronPage')]">electron</router-link>
-    <router-link to="/LogicPage" :class="[checkRoute('LogicPage')]">Logic</router-link>
+    <router-link to="/canvasPage" :class="[checkRoute('canvasPage')]"
+      >canvas</router-link
+    >
+    <router-link to="/electronPage" :class="[checkRoute('electronPage')]"
+      >electron</router-link
+    >
+    <router-link to="/LogicPage" :class="[checkRoute('LogicPage')]"
+      >Logic</router-link
+    >
     <!--  -->
-    <router-link :to="commonlyPath" :class="[checkRoute('commonlyMeta')]">常用
-      <input type="text" v-model="commonlyParams" placeholder="routerParams">
-      <input type="text" v-model="commonlyQuery" placeholder="routerQuery">
+    <router-link :to="commonlyPath" :class="[checkRoute('commonlyMeta')]"
+      >常用
+      <input type="text" v-model="commonlyParams" placeholder="routerParams" />
+      <input type="text" v-model="commonlyQuery" placeholder="routerQuery" />
     </router-link>
   </div>
-  <router-view></router-view>
+  <!-- <div class="px-2"><router-view></router-view></div> -->
+  <router-view v-slot="{ Component, route }" class="px-5">
+    <transition :name="route.meta.transition || ''">
+      <component :is="Component" :key="route.path" />
+    </transition>
+  </router-view>
   <!-- 版本區 -->
-  <div style="position: relative;bottom: 0;">
-    <div>Chrome:
+  <div style="position: relative; bottom: 0">
+    <div>
+      Chrome:
       <span id="chrome-version"></span>
     </div>
-    <div>node:
+    <div>
+      node:
       <span id="node-version"></span>
     </div>
-    <div>electron:
+    <div>
+      electron:
       <span id="electron-version"></span>
     </div>
   </div>
@@ -48,21 +77,26 @@ const checkRoute = (key) => {
 const commonlyParams = ref();
 const commonlyQuery = ref();
 
-watch([commonlyParams, commonlyQuery], ([newParams, newQuery], [oldParams, oldQuery]) => {
-  // 在這裡可以處理參數變化的邏輯
-  console.log('commonlyParams 變化：', newParams, oldParams);
-  console.log('commonlyQuery 變化：', newQuery, oldQuery);
-});
+watch(
+  [commonlyParams, commonlyQuery],
+  ([newParams, newQuery], [oldParams, oldQuery]) => {
+    // 在這裡可以處理參數變化的邏輯
+    console.log("commonlyParams 變化：", newParams, oldParams);
+    console.log("commonlyQuery 變化：", newQuery, oldQuery);
+  }
+);
 
 const commonlyPath = computed(() => {
-  return `/commonly/${commonlyParams.value}${commonlyQuery.value ? `?queryValue${commonlyQuery.value}` : ""}`;
-})
+  return `/commonly/${commonlyParams.value}${
+    commonlyQuery.value ? `?queryValue${commonlyQuery.value}` : ""
+  }`;
+});
 
-const provideTest = ref(123);
-provide('provideTest', provideTest);
-watch(provideTest,(v)=>{
-  console.log(v)
-})
+const provideTest = ref("provideTest 測試");
+provide("provideTest", provideTest);
+watch(provideTest, (v) => {
+  console.log(v);
+});
 </script>
 
 <style lang="scss">
@@ -74,7 +108,7 @@ body {
   margin: 8px;
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width: 500px) {
   html {
     font-size: 10px;
   }
@@ -104,6 +138,9 @@ body {
 li {
   word-break: break-all;
   white-space: pre-wrap;
+}
+ol,ul>li{
+  // list-style-type: decimal;
 }
 
 .isShow {

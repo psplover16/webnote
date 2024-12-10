@@ -84,6 +84,13 @@ const routes = [
       title: "commonlyMeta",
     },
   },
+  {
+    path: "/canvasPage",
+    component: () => import("@/views/canvasPage.vue"),
+    meta: {
+      title: "canvasPage",
+    },
+  },
 ];
 
 const router = createRouter({

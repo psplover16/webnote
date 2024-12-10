@@ -5,7 +5,8 @@
       <div :class="['isShow', isShow ? '' : 'rotate180']">^</div>
     </h2>
     <ol type="I" v-if="isShow">
-      <li>Vue導入，
+      <li>
+        Vue導入，
         <ul>
           <li>vue create 專案名稱</li>
           <li>npm create vite@latest</li>
@@ -133,15 +134,47 @@
   &lt;router-view /&gt;          
         </pre>
       </li>
-      <li></li>
+      <li>
+        tailwindCss
+        <ul>
+          <li>npm install -D tailwindcss postcss autoprefixer</li>
+          <li>npx tailwindcss init -p</li>
+          <li>
+            修改 tailwind.config.js 配置檔
+            <pre>
+module.exports = {
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+            </pre>
+          </li>
+          <li>
+            設置一個css注入tailwind
+            <pre>
+src/style/tailwind.css
+//
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+            </pre>
+          </li>
+          <li>
+            main.js注入tailwind
+            <div>import "./style/index.css"; //在此引入</div>
+          </li>
+        </ul>
+      </li>
       <li></li>
     </ol>
   </div>
 </template>
 
 <script setup>
-import { ref,onMounted } from "vue";
-import { useRouter,useRoute } from "vue-router";
+import { ref, onMounted } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
 const isShow = ref(false);
 const a1 = ref(false);
@@ -149,13 +182,11 @@ defineProps({
   title: String,
 });
 
-
-onMounted(()=>{
+onMounted(() => {
   // console.log(useRoute().path);
   // console.log(useRoute().params);
   // console.log(useRoute().query);
   // console.log(useRoute().name);
-})
-
+});
 </script>
 <style lang="scss" scoped></style>

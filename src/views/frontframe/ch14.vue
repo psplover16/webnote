@@ -54,8 +54,8 @@ defineProps({
   title: String,
 });
 onMounted(() => {
-  console.log(provideTest.value);
-  provideTest.value = 456;
+  console.log("inject收到：來自APP" + provideTest.value);
+  provideTest.value = "把APP修改成inject";
 });
 </script>
 <style lang="scss" scoped></style>

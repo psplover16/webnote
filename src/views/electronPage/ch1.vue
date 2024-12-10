@@ -55,7 +55,6 @@ onBeforeUnmount(() => {
   // console.log(document.getElementById("videoOriginalPos"))
   video.style.display = 'none';
   document.getElementById("videoOriginalPos").appendChild(video);
-  // console.log(123456)
 })
 const saveVideo = () => {
   // console.log(window.electronAPI.getBuffer())
