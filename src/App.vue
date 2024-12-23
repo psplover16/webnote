@@ -17,7 +17,13 @@
       >DOM操作和事件處理</router-link
     >
     <router-link to="/RWD" :class="[checkRoute('RWD')]"
-      >頁面布局和樣式</router-link
+      >頁面布局</router-link
+    >
+    <router-link to="/CSS" :class="[checkRoute('CSS')]"
+      >CSS</router-link
+    >
+    <router-link to="/SVG" :class="[checkRoute('SVG')]"
+      >SVG</router-link
     >
     <router-link to="/webpage" :class="[checkRoute('webpage')]"
       >瀏覽器相關知識</router-link

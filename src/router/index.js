@@ -91,6 +91,20 @@ const routes = [
       title: "canvasPage",
     },
   },
+  {
+    path: "/CSS",
+    component: () => import("@/views/CSS.vue"),
+    meta: {
+      title: "CSS",
+    },
+  },
+  {
+    path: "/SVG",
+    component: () => import("@/views/SVG.vue"),
+    meta: {
+      title: "SVG",
+    },
+  },
 ];
 
 const router = createRouter({
