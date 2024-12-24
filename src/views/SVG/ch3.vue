@@ -70,7 +70,7 @@ const pathList = ref([
       "從目前點的座標畫條二次貝茲曲線到指定點的 x, y 座標：其中 x1, y1 為控制點 ( quadratic Bézier curve )",
   },
   {
-    name: "A",
+    name: "A (弧形)",
     params: "rx ry x-axis-rotation large-arc-flag sweep-flag x y",
     contents:
       "從目前點的座標畫個橢圓形到指定點的 x, y 座標：其中 rx, ry 為橢圓形的 x 軸及 y 軸的半徑，x-axis-rotation 是弧線與 x 軸的旋轉角度，large-arc-flag 則設定 1 最大角度的弧線或是 0 最小角度的弧線，sweep-flag 設定方向為 1 順時針方向或 0 逆時針方向 ( Arc )",

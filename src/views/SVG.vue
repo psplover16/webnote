@@ -3,8 +3,9 @@
     <!-- <ch1 title="基礎" /> -->
     <ch2 title="基礎" />
     <ch3 title="Path" />
-    <!-- https://www.oxxostudio.tw/articles/201406/svg-01-intro.html -->
-    <!-- https://www.oxxostudio.tw/articles/201406/face.html -->
+    <ch4 title="stroke" />
+    <ch5 title="fill" />
+    <!-- https://www.oxxostudio.tw/articles/201410/svg-tutorial.html -->
   </div>
 </template>
 
