@@ -2,6 +2,7 @@
   <div>
     <!-- <ch1 title="基礎" /> -->
     <ch2 title="基礎" />
+    <ch3 title="Path" />
     <!-- https://www.oxxostudio.tw/articles/201406/svg-01-intro.html -->
     <!-- https://www.oxxostudio.tw/articles/201406/face.html -->
   </div>

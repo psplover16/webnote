@@ -5,8 +5,20 @@
       <div :class="['isShow', isShow ? '' : 'rotate180']">^</div>
     </h2>
     <ol type="I" v-if="isShow">
-      <li>
-        <svg width="200" height="250">
+      <li v-html="basicCode"></li>
+      <li>{{ basicCode }}</li>
+    </ol>
+  </div>
+</template>
+
+<script setup>
+import { ref } from "vue";
+defineProps({
+  title: String,
+});
+const isShow = ref(false);
+const basicCode = ref(`
+        <svg width="200" height="180">
           <!-- g表示群組 -->
           <!-- id表示名稱 -->
           <g id="layer01">
@@ -20,7 +32,7 @@
               id="a3"
               x="52"
               y="54"
-              rx="30"
+              rx="20"
               ry="10"
               fill="#FF6CC4"
               stroke="red"
@@ -74,16 +86,5 @@
             />
           </g>
         </svg>
-      </li>
-      <pre></pre>
-    </ol>
-  </div>
-</template>
-
-<script setup>
-import { ref } from "vue";
-defineProps({
-  title: String,
-});
-const isShow = ref(true);
+`);
 </script>
