@@ -5,57 +5,89 @@
   </div>
   <div>
     <ul>
-      <li>undefined，
-        <span v-if="showText">變數已被宣告，但尚未賦值，或者表示變數訪問的屬性或索引不存在</span>
+      <li>
+        <pre>
+lottie引用
+npm i lottie-web-vue
+
+import { LottieAnimation } from "lottie-web-vue";
+import saoSiang from "@/assets/images/lottie/saoSiang.json";
+
+{{ lottieCode }}
+</pre
+        >
       </li>
-      <li>null，<span v-if="showText">表示空的、無效、未定義的值，可以賦值給對象</span></li>
-      <li>表示資料類型
+      <li>
+        undefined，
+        <span v-if="showText"
+          >變數已被宣告，但尚未賦值，或者表示變數訪問的屬性或索引不存在</span
+        >
+      </li>
+      <li>
+        null，<span v-if="showText"
+          >表示空的、無效、未定義的值，可以賦值給對象</span
+        >
+      </li>
+      <li>
+        表示資料類型
         <ul v-if="showText">
           <li>typeof(value)</li>
           <li>Array.isArray(value)</li>
           <li>Object.prototype.toString.call(value)</li>
         </ul>
       </li>
-      <li>正則檢驗
+      <li>
+        正則檢驗
         <ul v-if="showText">
           <li>exec，會回傳Array，regex.ecec(value)</li>
           <li>test，會回傳bool，regex.test(value)</li>
         </ul>
       </li>
-      <li>var / let / const
+      <li>
+        var / let / const
         <ul v-if="showText">
           <li>var，變數提升，函數作用域、可重複宣告</li>
           <li>let，塊級作用域、不可重複宣告、無變數提升</li>
           <li>const，常數，塊級作用域、不可重複宣告、無變數提升</li>
         </ul>
       </li>
-      <li>this
+      <li>
+        this
         <ul v-if="showText">
           <li>全域，指向window</li>
           <li>普通函數，指向window</li>
           <li>作為物件，會指向調用該方法的對象(物件本身)</li>
           <li>構造函數，this會通過new創建新對象，指向新的對象</li>
-          <li>箭頭函數，沒有自己的this，當在創建時，捕獲其上下文作用域的this，當成自己的this</li>
+          <li>
+            箭頭函數，沒有自己的this，當在創建時，捕獲其上下文作用域的this，當成自己的this
+          </li>
         </ul>
       </li>
-      <li>箭頭函數
+      <li>
+        箭頭函數
         <ul v-if="showText">
           <li>沒有自己的this，而是在其創建時，繼承其詞法作用域</li>
           <li>無法作為建構式，不能用new來創建物件</li>
           <li>不能使用arguments</li>
         </ul>
       </li>
-      <li>深層複製，
+      <li>
+        深層複製，
         <span v-if="showText">JSON.parse(JSON.stringify(value))</span>
       </li>
-      <li>script，不加 / defer / async 差異
+      <li>
+        script，不加 / defer / async 差異
         <ul v-if="showText">
-          <li>不加，按照文檔順序執行，遇到沒有 defer 的 script 標籤時，它會立即暫停文檔解析，下載並執行該腳本，然後再繼續解析文檔的餘下部分。可能會阻塞腳本</li>
+          <li>
+            不加，按照文檔順序執行，遇到沒有 defer 的 script
+            標籤時，它會立即暫停文檔解析，下載並執行該腳本，然後再繼續解析文檔的餘下部分。可能會阻塞腳本
+          </li>
           <li>defer，將腳本的下載延遲至文檔解析完畢，對內嵌腳本無效</li>
           <li>async，非同步的下載腳本，可能會導致變數混亂</li>
         </ul>
       </li>
-      <li>pinia有哪些??
+      <li>
+        pinia有哪些??
         <ul v-if="showText">
           <li>state / actions / getters</li>
           <li>export default aa~~</li>
@@ -70,7 +102,8 @@ aa.getters;
         </ul>
       </li>
 
-      <li>router
+      <li>
+        router
         <ul v-if="showText">
           <li>router.push(location)</li>
           <li>router.replace(location)</li>
@@ -92,7 +125,8 @@ router.afterEach((to,from)=>{
           </li>
         </ul>
       </li>
-      <li>route
+      <li>
+        route
         <ul v-if="showText">
           <li>route.path 當前路徑</li>
           <li>route.params</li>
@@ -100,16 +134,24 @@ router.afterEach((to,from)=>{
           <li>route.name</li>
         </ul>
       </li>
-      <li>ssr vs csr
+      <li>
+        ssr vs csr
         <ul v-if="showText">
           <li>SSR，服務器具渲染，SEO</li>
-          <li>CSR，vue3, 渲染過程在JS，JS會比較大包，載入速度會比較慢，可互動時間比較長</li>
+          <li>
+            CSR，vue3,
+            渲染過程在JS，JS會比較大包，載入速度會比較慢，可互動時間比較長
+          </li>
         </ul>
       </li>
-      <li>CORS
+      <li>
+        CORS
         <ul v-if="showText">
-          <li>瀏覽器的安全限制，代表兩個網址不同源，不同協定/不同主機/不同port</li>
-          <li>解決，
+          <li>
+            瀏覽器的安全限制，代表兩個網址不同源，不同協定/不同主機/不同port
+          </li>
+          <li>
+            解決，
             <ul>
               <li>Access-controll-allow-orgin</li>
               <li>代理伺服器</li>
@@ -119,19 +161,24 @@ router.afterEach((to,from)=>{
           </li>
         </ul>
       </li>
-      <li>CSRF
+      <li>
+        CSRF
         <ul v-if="showText">
           <li>跨站請求偽造</li>
           <li>攻擊者利用使用者的身分訊息執行了使用者非本意的操作</li>
           <li>利用token來防範</li>
         </ul>
       </li>
-      <li>XSS攻擊
+      <li>
+        XSS攻擊
         <ul v-if="showText">
           <li>跨站腳本攻擊</li>
-          <li>攻擊者透過注入腳本來利用網站本身的程式漏，當其他用戶訪問受影響的網頁時，這些腳本會在用戶的瀏覽器執行，從而執行竊取個資、修改網頁內容等行為</li>
           <li>
-            <ul>防範
+            攻擊者透過注入腳本來利用網站本身的程式漏，當其他用戶訪問受影響的網頁時，這些腳本會在用戶的瀏覽器執行，從而執行竊取個資、修改網頁內容等行為
+          </li>
+          <li>
+            <ul>
+              防範
               <li>用戶輸入的資料要進行驗證及過濾</li>
               <li>對特殊符號進行編碼，以防止瀏覽器誤認為是代碼</li>
               <li>避免使用不安全的JS API，例如eval()和innerHTML</li>
@@ -139,7 +186,8 @@ router.afterEach((to,from)=>{
           </li>
         </ul>
       </li>
-      <li>原型鍊
+      <li>
+        原型鍊
         <pre>
 function dog(name){
     this.name=name;
@@ -152,23 +200,29 @@ john.whatName()
         </pre>
       </li>
       <li>建構式</li>
-      <li>Array的操作
+      <li>
+        Array的操作
         <ul>
           <li>Arr.splice("要操作得起始索引","要修改的數量","要添加的元素")</li>
           <li>Arr1.concat(Arr2)</li>
-          <li>Arr.join("")
+          <li>
+            Arr.join("")
             <span v-if="showText">把Array全部元素變成字串組合起來</span>
           </li>
-          <li>Arr.pop()
+          <li>
+            Arr.pop()
             <span v-if="showText">刪除並返回最後一個元素</span>
           </li>
-          <li>Arr.shift()
+          <li>
+            Arr.shift()
             <span v-if="showText">刪除並返回第一個元素</span>
           </li>
-          <li>Arr.unshift(str)
+          <li>
+            Arr.unshift(str)
             <span v-if="showText">添加str元素至Arr的第一個元素</span>
           </li>
-          <li>Arr.sort((beforeNum,afterNum)=>beforeNum - afterNum)
+          <li>
+            Arr.sort((beforeNum,afterNum)=>beforeNum - afterNum)
             <ul v-if="showText">
               <li>範例為升序</li>
               <li>beforeNum - afterNum 若 為正數，兩者要交換位置</li>
@@ -181,7 +235,8 @@ john.whatName()
         <li></li>
         <li></li>
       </ul> -->
-      <li>Promise
+      <li>
+        Promise
         <ul v-if="showText">
           <li>
             <pre>
@@ -204,7 +259,8 @@ const mypromise = new Promise((resolve, reject) => {
           </li>
         </ul>
       </li>
-      <li>Async
+      <li>
+        Async
         <ul v-if="showText">
           <li>
             <pre>
@@ -235,6 +291,9 @@ getData();
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
+import { LottieAnimation } from "lottie-web-vue";
+import saoSiang from "@/assets/images/lottie/saoSiang.json";
+
 defineProps({
   title: String,
 });
@@ -245,8 +304,7 @@ onMounted(() => {
   // console.log(useRoute().name); // commonly
   // console.log(useRoute().meta); // {title: 'commonlyMeta'}
   // console.log(useRoute().query); // {ggwp: '123'}
-})
-
+});
 
 const word = `
 費式
@@ -273,13 +331,19 @@ function fasi(key) {
   }
   return beforeVal + afterVal;
 }
-`
-
-
+`;
+const lottieCode = `<LottieAnimation
+          class="pointer-events-none w-1/2"
+          :animation-data="saoSiang"
+          :auto-play="true"
+          :speed="1"
+        />`;
 </script>
 
-
 <style lang="scss" scoped>
+ul {
+  list-style-type: disc;
+}
 .btnGroup {
   display: flex;
 
