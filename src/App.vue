@@ -145,8 +145,11 @@ li {
   word-break: break-all;
   white-space: pre-wrap;
 }
-ol,ul>li{
-  // list-style-type: decimal;
+ol>li {
+  list-style-type: decimal;
+}
+ul>li{ // 無序
+  list-style-type: disc; // circle
 }
 
 .isShow {

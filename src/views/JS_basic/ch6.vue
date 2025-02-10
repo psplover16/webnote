@@ -108,6 +108,25 @@ Promise.all([asyncOperation1, asyncOperation2(), asyncOperation3()])
     .catch((error) => {
         console.error('An error occurred:', error);
     });
+// 得到第一個接受或拒絕時，執行後續
+Promise.race([asyncOperation1, asyncOperation2(), asyncOperation3()])
+    .then((results) => {
+        console.log('All async operations completed');
+        console.log('Results:', results);
+    })
+    .catch((error) => {
+        console.error('An error occurred:', error);
+    });
+
+// 取得全部的promise
+Promise.allSettled([asyncOperation1, asyncOperation2(), asyncOperation3()])
+    .then((results) => {
+        console.log('All async operations completed'); // 跑出陣列 [{status: "fulfilled",value: "Async Operation 1 completed"}]
+        console.log('Results:', results);
+    })
+    .catch((error) => {
+        console.error('An error occurred:', error);
+    });
         </pre>
       </li>
       <li>

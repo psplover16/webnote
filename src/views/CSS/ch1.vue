@@ -37,7 +37,7 @@ import { ref } from "vue";
 defineProps({
   title: String,
 });
-const isShow = ref(true);
+const isShow = ref(false);
 const filterList = ref({
   原色: "",
   模糊: "blur(15px)",
