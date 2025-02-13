@@ -6,15 +6,19 @@
     </h2>
     <ol type="I" v-if="isShow">
       <li>
-        <span>var，宣告的變數存在變數提升(code執行過程，會被提升至作用域的頂部)，作用範圍為全域，函式範圍作用域，僅限該函式</span>
+        <span>var，宣告的變數存在變數提升(code執行過程，會被提升至作用域的頂部)，作用範圍為全域，<span class="r">函式範圍作用域</span>，僅限該函式</span>
         <pre>
 const b = function () {
   for (var i = 0; i < 5; i++) {
+    console.log(i);
     setTimeout(() => {
       console.log(i)
-    }, 0);
+    }, i*1000);
   }
 }
+b(); // 0/1/2/3/4   5/5/5/5/5
+// for迴圈定義，初始值是，若i<5，則跑函數，然後i++
+// 一開始for會先跑完，把i設定到settimeout，之後settimeout依次執行console.log(i)，但由於i是全域函數，所以顯示最後面的i結果
         </pre>
 第二題
         <pre>
