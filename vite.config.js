@@ -47,7 +47,7 @@ export default defineConfig((command, mode, ssrBuild) => {
     server: {
       port: 3000, // 将端口设置为 3000
     },
-
+    assetsInclude: ['**/*.lottie'], // 資源包含副檔名是lottie的檔案
     build: {
       rollupOptions: {
         output: { // 優化打包輸出

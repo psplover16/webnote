@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ch2 title="img/canvas/blob轉換" />
+    <ch2 title="img/canvas/base64轉換" />
     <ch1 title="刮刮樂" />
   </div>
 </template>

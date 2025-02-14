@@ -8,34 +8,14 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 
 
-3.v-bind:$attrs
-4.assetsInclude: ['**/*.lottie'], vite.cpnfig.js 解析lottie
-5.axios 內建 timeout 及 自訂 timeout
+
 6.懶加載 lazyloading
-6.Vue3 attrs slot用法
-7.
-const promise1 = new Promise((resolve) => setTimeout(resolve, 100, '第一個解決'));
-const promise2 = new Promise((resolve) => setTimeout(resolve, 200, '第二個解決'));
-
-Promise.race([promise1, promise2])
-    .then((value) => {
-        console.log(value); // 輸出: "第一個解決"
-    });
-
-8.        popupContainer.scrollTo({
-            // 選項的中間
-            top:
-                optionsElements[idx].offsetTop -
-                popupContainer.clientHeight / 2 +
-                optionsElements[idx].clientHeight / 2,
-          });
-
-      window.scrollTo(0, window.scrollY);
-
 
 
 
 9.axios封包
+5.axios 內建 timeout 及 自訂 timeout
+
 export const requestHandler = async (apiPromise, errorHandler) => {
   try {
     const res = await apiPromise();

@@ -12,7 +12,7 @@
       
 <script setup>
 import { ref } from 'vue';
-const isShow = ref(false);
+const isShow = ref(true);
 const a1 = ref(false)
 defineProps({
   title: String,

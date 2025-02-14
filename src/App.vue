@@ -16,15 +16,9 @@
     <router-link to="/dom_event" :class="[checkRoute('dom_event')]"
       >DOM操作和事件處理</router-link
     >
-    <router-link to="/RWD" :class="[checkRoute('RWD')]"
-      >頁面布局</router-link
-    >
-    <router-link to="/CSS" :class="[checkRoute('CSS')]"
-      >CSS</router-link
-    >
-    <router-link to="/SVG" :class="[checkRoute('SVG')]"
-      >SVG</router-link
-    >
+    <router-link to="/RWD" :class="[checkRoute('RWD')]">頁面布局</router-link>
+    <router-link to="/CSS" :class="[checkRoute('CSS')]">CSS</router-link>
+    <router-link to="/SVG" :class="[checkRoute('SVG')]">SVG</router-link>
     <router-link to="/webpage" :class="[checkRoute('webpage')]"
       >瀏覽器相關知識</router-link
     >
@@ -113,7 +107,10 @@ html {
 body {
   margin: 8px;
 }
-
+button {
+  padding: 0.2rem 1rem;
+  border: 1px solid black;
+}
 @media screen and (max-width: 500px) {
   html {
     font-size: 10px;
@@ -145,10 +142,11 @@ li {
   word-break: break-all;
   white-space: pre-wrap;
 }
-ol>li {
+ol > li {
   list-style-type: decimal;
 }
-ul>li{ // 無序
+ul > li {
+  // 無序
   list-style-type: disc; // circle
 }
 

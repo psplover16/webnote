@@ -45,7 +45,7 @@ defineProps({
   title: String,
 });
 const exportImgBase64 = ref();
-const isShow = ref(true);
+const isShow = ref(false);
 
 // 圖片轉base64
 const convertImgToBase64 = () => {

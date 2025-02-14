@@ -77,14 +77,30 @@
         open一個html
         {{ openNewUrl }}
       </li>
-      <li></li>
+      <li>
+        <div>
+          畫面滾動，滾動到
+          <input type="number" v-model="scrollParams" class="border" />
+          px
+        </div>
+        <button @click="showWindowScrollY">console.log(window.scrollY)</button>
+        <button @click="windowScroll">滾動window</button>
+        <div>指定節點滾動到哪個位置</div>
+        <pre>
+  window.scrollTo({
+    left: 0,
+    top: scrollParams.value,
+    behavior: "smooth", // 平滑滾動 // auto，立即滾動到指定位置
+  });
+        </pre>
+      </li>
       <li></li>
     </ol>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 const isShow = ref(false);
 const a1 = ref(false);
 defineProps({
@@ -96,7 +112,7 @@ const characters = str.split("");
 // console.log(fruits); // 输出: ['apple', 'banana', 'orange']
 // console.log(characters);
 
-const downloadUrl = '圖片網址'
+const downloadUrl = "圖片網址";
 const openNewUrl = ref(`
 const newWindow = window.open('https://blog.csdn.net/weixin_45152159/article/details/133030325','_blank')
 // '_blank'：在新窗口或新標籤頁中打開。
@@ -108,5 +124,18 @@ newWindow.document.write(\`<img src="${downloadUrl}" alt="Base64 Image" style="m
 newWindow.document.write('</body></html>');
 newWindow.document.close();
 `);
+
+const scrollParams = ref(0); // 要滾動哪個座標
+const showWindowScrollY = () => {
+  console.log(window.scrollY);
+};
+const windowScroll = () => {
+  // window.scrollTo(0, scrollParams.value);
+  window.scrollTo({
+    left: 0,
+    top: scrollParams.value,
+    behavior: "smooth", // 平滑滾動
+  });
+};
 </script>
 <style lang="scss" scoped></style>
