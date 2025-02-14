@@ -8,11 +8,10 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 
 
-
-2.base64轉canvas等等
 3.v-bind:$attrs
 4.assetsInclude: ['**/*.lottie'], vite.cpnfig.js 解析lottie
-5.axios 內建 timeout
+5.axios 內建 timeout 及 自訂 timeout
+6.懶加載 lazyloading
 6.Vue3 attrs slot用法
 7.
 const promise1 = new Promise((resolve) => setTimeout(resolve, 100, '第一個解決'));

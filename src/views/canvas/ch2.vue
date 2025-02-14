@@ -9,8 +9,28 @@
         <img :src="img123" class="w-[100px]" />
         <button @click="convertImgToBase64">img圖片導出base64</button>
         <div>文本不超出div，超出部分以...顯示</div>
-        <button @click="copyCuponCode(exportImgBase64)">點文本複製</button>
+        <button @click="copyCuponCode(exportImgBase64)">複製下列div文字</button>
         <div class="ellipsisContainer">{{ exportImgBase64 }}</div>
+      </li>
+      <li>
+        <button @click="imgToCanvas">把圖片塞入canvas</button>
+        <canvas ref="canvasImg"></canvas>
+      </li>
+      <li>
+        <button @click="baseToCanvas(exportImgBase64)">
+          把li2的base64轉canvas
+        </button>
+        <canvas ref="canvasBase64"></canvas>
+      </li>
+      <li>
+        <button @click="canvasToBase64(canvasBase64)">
+          把上述canvas轉base64
+        </button>
+        <button @click="copyCuponCode(exportImgBase64)">複製下列div文字</button>
+        <button @click="base64DownloadImg(exportCanvasBase64)">
+          把base64轉成圖片然後下載
+        </button>
+        <div class="ellipsisContainer">{{ exportCanvasBase64 }}</div>
       </li>
       <pre></pre>
     </ol>
@@ -27,9 +47,8 @@ defineProps({
 const exportImgBase64 = ref();
 const isShow = ref(true);
 
+// 圖片轉base64
 const convertImgToBase64 = () => {
-  // console.log(img123);
-  // console.log(img123.value); // X
   fetch(img123)
     .then((response) => response.blob()) // 獲取圖片的 Blob 對象
     .then((blob) => {
@@ -44,11 +63,46 @@ const convertImgToBase64 = () => {
       console.error("轉換失敗:", error);
     });
 };
-
-// 圖片轉base64
 // 圖片轉canvas
-// 圖片導入canvas
+const canvasImg = ref(null);
+const imgToCanvas = () => {
+  const img = new Image();
+  img.src = img123;
+  img.onload = function () {
+    console.log(img);
+    const canvas = canvasImg.value;
+    const ctx = canvas.getContext("2d");
+    // 繪製圖片到 canvas，指定 x, y 位置
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0, img.width, img.height); // 繪製圖片
+  };
+};
+// base64轉canvas
+const canvasBase64 = ref(null);
+const baseToCanvas = async (base64Str) => {
+  const ctx = canvasBase64.value.getContext("2d");
+  const img = new Image();
+  img.src = base64Str; // 將 Base64 字符串設置為圖片的 src
 
+  // 當圖片加載完成後，將其繪製到 Canvas 上
+  img.onload = async () => {
+    ctx.drawImage(
+      img,
+      0,
+      0,
+      canvasBase64.value.width,
+      canvasBase64.value.height
+    ); // 將圖片繪製到 Canvas
+  };
+};
+// canvas轉base64
+const exportCanvasBase64 = ref(null);
+const canvasToBase64 = (canvasNode) => {
+  const base64Image = canvasNode.toDataURL("image/png"); // 可以指定圖片格式，如 'image/jpeg'
+  exportCanvasBase64.value = base64Image;
+};
+// 剪貼簿操作
 const copyCuponCode = (text) => {
   // readText()：讀取剪貼簿純文字內容。
   // writeText()：對剪貼簿寫入純文字內容。
@@ -57,6 +111,18 @@ const copyCuponCode = (text) => {
   navigator.clipboard.writeText(text).then(() => {
     this.$StatusMsg(true, "複製", "您已成功複製優惠碼!");
   });
+};
+//
+// 把 basse64轉成圖片然後下載
+const base64DownloadImg = (base64Image) => {
+  const link = document.createElement("a");
+  link.href = base64Image; // 將 href 設置為 Base64 字符串
+  link.download = "downloaded-image.png"; // 設置下載的文件名
+
+  // 觸發點擊事件
+  document.body.appendChild(link); // 將鏈接添加到文檔中
+  link.click(); // 自動點擊鏈接
+  document.body.removeChild(link); // 點擊後移除鏈接
 };
 </script>
 
