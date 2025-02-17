@@ -53,5 +53,5 @@ import { ref } from "vue";
 defineProps({
   title: String,
 });
-const isShow = ref(true);
+const isShow = ref(false);
 </script>

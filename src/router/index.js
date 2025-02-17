@@ -31,6 +31,13 @@ const routes = [
     },
   },
   {
+    path: "/ajax",
+    component: () => import("@/views/ajax.vue"),
+    meta: {
+      title: "ajax",
+    },
+  },
+  {
     path: "/dom_event",
     component: () => import("@/views/dom_event.vue"),
     meta: {

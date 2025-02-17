@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <ch1 title="filter" />
-    <ch2 title="文本排序" />
-  </div>
+  <ol>
+    <li><ch1 title="filter" /></li>
+    <li><ch2 title="文本排序" /></li>
+  </ol>
 </template>
 
 <script setup>

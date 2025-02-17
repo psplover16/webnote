@@ -13,6 +13,7 @@
       :class="[checkRoute('frontEngineering')]"
       >前端工程化與工具</router-link
     >
+    <router-link to="/ajax" :class="[checkRoute('ajax')]">後端連線</router-link>
     <router-link to="/dom_event" :class="[checkRoute('dom_event')]"
       >DOM操作和事件處理</router-link
     >
@@ -40,7 +41,7 @@
     </router-link>
   </div>
   <!-- <div class="px-2"><router-view></router-view></div> -->
-  <router-view v-slot="{ Component, route }" class="px-5">
+  <router-view v-slot="{ Component, route }" class="px-8">
     <transition :name="route.meta.transition || ''">
       <component :is="Component" :key="route.path" />
     </transition>
@@ -123,7 +124,6 @@ button {
   // align-items: center;
   font-size: 1.7rem;
   text-align: center;
-
   a {
     display: inline-block;
     margin: 10px;

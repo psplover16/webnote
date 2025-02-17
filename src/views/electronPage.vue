@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <ch1 title="模組" />
-    <ch3 title="vite建置" />
-    <ch2 title="打包" />
-
-  </div>
+  <ol>
+    <li><ch1 title="模組" /></li>
+    <li><ch3 title="vite建置" /></li>
+    <li><ch2 title="打包" /></li>
+  </ol>
 </template>
 
 <script setup>

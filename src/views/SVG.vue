@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <!-- <ch1 title="基礎" /> -->
-    <ch2 title="基礎" />
-    <ch3 title="Path" />
-    <ch4 title="stroke" />
-    <ch5 title="fill" />
-    <!-- https://www.oxxostudio.tw/articles/201410/svg-tutorial.html -->
-  </div>
+  <!-- https://www.oxxostudio.tw/articles/201410/svg-tutorial.html -->
+  <ol>
+    <!-- <li><ch1 title="基礎" /></li> -->
+    <li><ch2 title="基礎" /></li>
+    <li><ch3 title="Path" /></li>
+    <li><ch4 title="stroke" /></li>
+    <li><ch5 title="fill" /></li>
+  </ol>
 </template>
 
 <script setup>

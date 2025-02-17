@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <ch1 title="Flexbox(布局方式1)" />
-    <ch2 title="Grid(布局方式2)" />
-    <ch3 title="響應式設計/媒體查詢/rem" />
-    <ch4 title="文本自動換行" />
-    <ch5 title="畫三角形" />
-    <ch6 title="position" />
-  </div>
+  <ol>
+    <li><ch1 title="Flexbox(布局方式1)" /></li>
+    <li><ch2 title="Grid(布局方式2)" /></li>
+    <li><ch3 title="響應式設計/媒體查詢/rem" /></li>
+    <li><ch4 title="文本自動換行" /></li>
+    <li><ch5 title="畫三角形" /></li>
+    <li><ch6 title="position" /></li>
+  </ol>
 </template>
 
 <script setup>

@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <ch2 title="img/canvas/base64轉換" />
-    <ch1 title="刮刮樂" />
-  </div>
+  <ol>
+    <li><ch1 title="刮刮樂" /></li>
+    <li><ch2 title="img/canvas/base64轉換" /></li>
+  </ol>
 </template>
 
 <script setup>

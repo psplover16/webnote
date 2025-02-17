@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <ch1 title="vite.config.js 設置" />
-    <ch2 title="config解析" />
-    <ch3 title="babel / Polyfill" />
-    <ch4 title="Vite-bundle檢測" />
-    <ch6 title="圖片壓縮工具" />
-    <ch5 title="套件的設置與引用" />
-  </div>
+  <ol>
+    <li><ch1 title="vite.config.js 設置" /></li>
+    <li><ch2 title="config解析" /></li>
+    <li><ch3 title="babel / Polyfill" /></li>
+    <li><ch4 title="Vite-bundle檢測" /></li>
+    <li><ch5 title="套件的設置與引用" /></li>
+    <li><ch6 title="圖片壓縮工具" /></li>
+  </ol>
 </template>
 
 <script setup>

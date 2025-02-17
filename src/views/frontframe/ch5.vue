@@ -22,7 +22,7 @@
 import { ref, onMounted, computed } from "vue";
 import { preloadAssets } from "@/constants/preload";
 
-const isShow = ref(true);
+const isShow = ref(false);
 const a1 = ref(false);
 defineProps({
   title: String,

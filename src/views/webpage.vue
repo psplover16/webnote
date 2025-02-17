@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <ch1 title="cookie / SessionStorage / LocalStorage" />
-    <ch2 title="跨域問題" />
-    <ch3 title="MVC VS MVVM" />
-    <ch6 title="script標籤加上 defer / async / 不加" />
-    <ch4 title="奇怪的問題" />
-    <ch5 title="攻擊" />
-    <ch7 title="githubPage打包 某些檔案404處理方式" />
-  </div>
+  <ol>
+    <li><ch1 title="cookie / SessionStorage / LocalStorage" /></li>
+    <li><ch2 title="跨域問題" /></li>
+    <li><ch3 title="MVC VS MVVM" /></li>
+    <li><ch6 title="script標籤加上 defer / async / 不加" /></li>
+    <li><ch4 title="奇怪的問題" /></li>
+    <li><ch5 title="攻擊" /></li>
+    <li><ch7 title="githubPage打包 某些檔案404處理方式" /></li>
+  </ol>
 </template>
 
 <script setup>

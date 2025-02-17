@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <ch1 title="DOM節點" />
-    <ch2 title="事件冒泡、綁定與解綁" />
-    <ch3 title="fetch抓取API範本" />
-    <!-- <ch4 title="" /> -->
-  </div>
+  <ol>
+    <li><ch1 title="DOM節點" /></li>
+    <li><ch2 title="事件冒泡、綁定與解綁" /></li>
+    <li><ch3 title="fetch抓取API範本" /></li>
+  </ol>
 </template>
 
 <script setup>
