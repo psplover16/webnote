@@ -1,7 +1,7 @@
 import mqtt from "mqtt";
 let mqttClient;
 
-const connectMQTT = (func,subTopic=[], brokerUrl = "wss://broker.mqttgo.io:8084/mqtt") => {
+const connectMQTT = (func,subTopic=[],brokerUrl = "wss://broker.mqttgo.io:8084/mqtt") => {
     return new Promise((resolve, reject) => {
       try {
         // const brokerUrl = "wss://broker.mqttgo.io:8084/mqtt"; // 替換為 mqttgo.io 的地址
@@ -11,7 +11,7 @@ const connectMQTT = (func,subTopic=[], brokerUrl = "wss://broker.mqttgo.io:8084/
             subTopic.forEach((v)=>{
                 mqttClient.subscribe(v);
             })
-            console.log('成功')
+            console.log('連線成功')
           resolve(mqttClient);
         });
   
@@ -31,4 +31,4 @@ const pubData = (topic,pubMsg) => {
 
  
 
-export { connectMQTT, pubData }
+export {connectMQTT,pubData}

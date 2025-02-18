@@ -3,7 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+  <!-- http-equiv="Content-Security-Policy" 用來設置內容安全策略（Content Security Policy, CSP）的 HTML 元素。
+  default-src 'self'：這表示所有資源（如圖片、腳本、樣式等）只能從當前網站加載。
+  script-src 'self'：這表示腳本只能來自當前網站，這可以防止從外部網站加載的腳本執行。
+  style-src 'self'：這表示樣式只能來自當前網站。 -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self'"> -->
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <title>刪除，會默認為package.json的name</title> -->
