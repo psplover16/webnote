@@ -24,6 +24,7 @@
     <li><ch2 title="Teleport(Vue3)" /></li>
     <li><ch14 title="provide/inject (Vue3)" /></li>
     <li><ch3 title="Vue/TailwindCss/Router/pinia導入" /></li>
+    <li><ch19 title="defineExpose與exposed/proxy插件的導入" /></li>
     <li><ch6 title="router&route" /></li>
     <li><ch4 title="Vuex vs pinia" /></li>
     <li><ch7 title="props" /></li>
@@ -68,6 +69,7 @@ import ch15 from "./frontframe/ch15.vue";
 import ch16 from "./frontframe/ch16.vue";
 import ch17 from "./frontframe/ch17.vue";
 import ch18 from "./frontframe/ch18.vue";
+import ch19 from "./frontframe/ch19.vue";
 
 const childClick = () => {
   console.log("frontFrame的click事件");

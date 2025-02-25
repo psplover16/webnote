@@ -14,6 +14,15 @@
       </li>
       <li>
         pinia導入，npm install pinia
+        <div>
+          <input
+            v-model="piniaTestStr"
+            class="border-black border"
+            type="number"
+          />
+          <button @click="setScreen">測試</button>
+        </div>
+        <div>是否>0.8，{{ screenSize.screenStatus }}</div>
         <ul>
           <li>
             在 store資料夾，放三個檔案，pinia.js / /index.js / 自定義pinia檔案
@@ -175,12 +184,18 @@ src/style/tailwind.css
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
-
+import { useScreenSize } from "@/store/screenSize";
 const isShow = ref(false);
 const a1 = ref(false);
 defineProps({
   title: String,
 });
+
+const screenSize = useScreenSize();
+const piniaTestStr = ref(0);
+const setScreen = () => {
+  screenSize.setScreenSize(Number(piniaTestStr.value));
+};
 
 onMounted(() => {
   // console.log(useRoute().path);
