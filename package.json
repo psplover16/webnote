@@ -1,0 +1,76 @@
+{
+  "name": "mynote",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "dev:test": "vite --mode test",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:serve": "concurrently -k \"npm run dev\" \"npm run electron\"",
+    "electron:build": "npm run build-icon && npm run build && electron-builder",
+    "electron": "wait-on tcp:3000 && cross-env NODE_ENV=development electron .",
+    "build-icon": "electron-icon-builder --input=./electron/assets/icon/pic.png --output=./electron/assets/ --flatten"
+  },
+  "build": {
+    "productName": "網頁筆記",
+    "copyright": "版權所有 © 2024 您的公司名称。保留所有权利。",
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": true
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist_electron"
+    },
+    "mac": {
+      "category": "public.app-category.unilities",
+      "target": "dmg",
+      "icon": "./electron/assets/icons/icon.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "./electron/assets/icons/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "lottie-web-vue": "^2.0.7",
+    "mqtt": "^5.8.0",
+    "pinia": "^3.0.1",
+    "vite-plugin-babel": "^1.2.0",
+    "vite-plugin-image-optimizer": "^1.1.8",
+    "vue": "^3.3.11",
+    "vue-router": "^4.0.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^30.0.3",
+    "electron-builder": "^24.13.3",
+    "electron-icon-builder": "^2.0.1",
+    "postcss": "^8.4.49",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "sharp": "^0.33.5",
+    "svgo": "^3.3.2",
+    "tailwindcss": "^3.4.16",
+    "vite": "^5.0.8",
+    "wait-on": "^7.2.0"
+  }
+}
